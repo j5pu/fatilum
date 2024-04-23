@@ -6,8 +6,8 @@ import React from "react";
 const popinsFont = Poppins({ weight: ['400', '600', '700'], subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Bank Website | TarreDev 💸 ',
-  description: 'Follow me for more!',
+  title: 'fatilum IT M&A',
+  description: 'Asesoramiento en M&A para IT',
 }
 
 export default function RootLayout({

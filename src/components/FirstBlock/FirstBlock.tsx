@@ -7,6 +7,10 @@ import { Reveal } from "../Reveal"
 
 
 export function FirstBlock() {
+    const onClick = () => {
+        window.location.href = "#tarjetas";
+    };
+
     return (
         <div className="relative p-4 md:py-40">
             <BackgroundRadialRight />
@@ -14,27 +18,30 @@ export function FirstBlock() {
                 <div>
                     <Reveal>
                         <h1 className="text-5xl font-semibold">
-                            El nuevo
+                            Asesoramiento en
                             <span className="block degradedBlue bg-blueLight">
-                                banco digital
+                                M&A
                             </span>
-                            para todos
+                            para empresas
+                            <span className="block degradedBlue bg-blueLight">
+                                IT
+                            </span>
                         </h1>
                     </Reveal>
                     <Reveal>
-                        <p className="max-w-md mt-10">Nuestro equipo de expertos utiliza una metodología
-                            para identificar las tarjetas de crédito que probablemente
-                            se ajusten a sus necesidades. Examinamos tasas
-                            porcentuales anuales, tarifas anuales.</p>
+                        <p className="max-w-md mt-10">Transparencia e innovaciones en fusiones y adquisiciones
+                            para ayudar al crecimiento de pequeñas y medianas empresas
+                            dando mayor claridad sobre el potencial y futuro de la operación.
+                            Acceso a Empresas Tecnológicas Compradoras y Private Equity.</p>
                     </Reveal>
                     <Reveal>
                         <div className="my-8">
-                            <Link href="#clients" className="px-4 py-3 rounded-md bg-blueRadial">Empieza ahora</Link>
+                            <button onClick={onClick} className="px-4 py-3 rounded-md bg-blueRadial">How to do that</button>
                         </div>
                     </Reveal>
                 </div>
                 <MotionTransition className="flex items-center justify-center">
-                    <Image src="/assets/cards-block.png" alt="Card" width={450} height={450} className="h-auto w-72 md:w-full" />
+                    <Image src="/assets/Handshake.svg" alt="Card" width={300} height={300} className="h-auto w-72 md:w-full" />
                 </MotionTransition>
             </div>
         </div>

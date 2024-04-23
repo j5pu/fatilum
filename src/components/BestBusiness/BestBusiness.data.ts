@@ -4,22 +4,22 @@ export const dataFeaturesBusiness: BestBusinessData = [
   {
     id: 1,
     icon: "rewards",
-    title: "Recompensas",
+    title: "B2B",
     description:
-      "Las mejores tarjetas de crédito ofrecen algunas combinaciones tentadoras de promociones y premios.",
+      "Verticales Software B2B en mercados especializados con equipo implicado y conocimiento del sector.",
   },
   {
     id: 2,
     icon: "safe",
-    title: "100% Seguro",
+    title: "Recurrente",
     description:
-      "Tomamos medidas proactivas para asegurarnos de que su información  y sus transacciones estén seguras.",
+      "Potencial hacia modelo de negocio recurrente, escalable y alcance global",
   },
   {
     id: 3,
     icon: "send",
-    title: "Envíos gratis",
+    title: "Generador",
     description:
-      "Una tarjeta de crédito con transferencia de saldo puede ahorrarle mucho dinero en intereses.",
+      "Generadores de caja con impacto y barreras de entrada.",
   },
 ];
