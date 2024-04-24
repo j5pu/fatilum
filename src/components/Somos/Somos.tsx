@@ -1,5 +1,4 @@
 "use client"
-import Link from "next/link"
 import { BackgroundRadialRight } from "../BackgroundRadialRight"
 import { MotionTransition } from "../MotionTransition"
 import Image from "next/image"
@@ -41,7 +40,8 @@ export function Somos() {
                     </Reveal>
                 </div>
                 <MotionTransition className="flex items-center justify-center">
-                    <Image src="/assets/Handshake.svg" alt="Card" width={300} height={300} className="h-auto w-72 md:w-full" />
+                    <Image src="/assets/Handshake.svg" alt="Card" width={300} height={300}
+                           className="h-auto w-72 md:w-full" />
                 </MotionTransition>
             </div>
         </div>

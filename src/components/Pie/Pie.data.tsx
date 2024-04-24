@@ -30,6 +30,6 @@ export const pieSocialNetworks = [
   {
     id: 5,
     icon: <RiLinkedinBoxFill />,
-    link: "https://www.linkedin.com/in/puertolas?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+    link: "https://www.linkedin.com/in/puertolas/"
   },
 ];

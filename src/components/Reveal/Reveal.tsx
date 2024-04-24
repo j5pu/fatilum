@@ -11,8 +11,8 @@ export function Reveal({ children }: { children: React.ReactNode }) {
 
     useEffect(() => {
         if (isInView) {
-            mainControls.start("visible")
-            slideControls.start("visible")
+            mainControls.start("visible").then()
+            slideControls.start("visible").then()
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isInView])

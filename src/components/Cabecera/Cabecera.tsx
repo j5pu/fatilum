@@ -16,7 +16,8 @@ export function Cabecera() {
                 <Link href="/" className="flex items-center">
                     <Image src="/assets/mnopi.png" width="150" height="40" alt="mnopi Logo" />
                 </Link>
-                <RiMenu3Line className="block text-3xl md:hidden cursor-pointer" onClick={() => setOpenMobileMenu(!openMobileMenu)} />
+                <RiMenu3Line className="block text-3xl md:hidden cursor-pointer"
+                             onClick={() => setOpenMobileMenu(!openMobileMenu)} />
                 <div className={`${openMobileMenu ? 'block' : 'hidden'} w-full md:block md:w-auto`}>
                     <div className="flex flex-col p-4 mt-4 md:p-0 md:flex-row md:space-x-8 md:mt-0 md:border-0">
                         {dataCabecera.map(({ id, name, idLink }) => (
