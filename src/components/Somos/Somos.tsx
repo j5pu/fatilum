@@ -29,8 +29,8 @@ export function Somos() {
                         </h1>
                     </Reveal>
                     <Reveal>
-                        <p className="max-w-md mt-10">Transparencia e innovación en fusiones y adquisiciones
-                            para ayudar al crecimiento de pequeñas y medianas empresas
+                        <p className="max-w-md mt-10">Transparencia e innovación en fusiones y adquisiciones,
+                            para ayudar al crecimiento de pequeñas y medianas empresas,
                             dando mayor claridad sobre el potencial y futuro de la operación.
                             Acceso a Empresas Tecnológicas Compradoras y Private Equity.</p>
                     </Reveal>
