@@ -11,7 +11,9 @@
     </option>
     <option name="titleBarState">
       <MTProjectTitleBarConfigState>
-        <option name="overrideColor" value="false" />
+        <option name="enabled" value="true" />
+        <option name="projectFrameColorHex" value="67dbe2" />
+        <option name="useProjectFrame" value="true" />
       </MTProjectTitleBarConfigState>
     </option>
   </component>
