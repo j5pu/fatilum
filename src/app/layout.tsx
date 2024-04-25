@@ -1,10 +1,8 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Poppins } from 'next/font/google'
 import localFont from 'next/font/local'
 import React from "react";
 
-const popinsFont = Poppins({ weight: ['400', '600', '700'], subsets: ['latin'] })
 const ChicaGogoFont = localFont({
   src: [
     {
