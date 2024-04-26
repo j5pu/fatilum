@@ -31,7 +31,7 @@ type RouteProps = {
 };
 
 export async function generateMetadata(
-  props: RouteProps,
+  props: any,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   const intl = await getIntl(props.params.locale);

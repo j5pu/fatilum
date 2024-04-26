@@ -12,6 +12,25 @@ export function Buscamos({ locale, dictionary }: { locale: string, dictionary: a
         window.location.href = "mailto:jose@mnopi.com";
     };
 
+    function Title() {
+        switch (locale) {
+            case "es":
+                return <h1 className="text-5xl font-semibold">
+                        Buscamos y acompañamos
+                        <span className="block degradedBlue bg-blueLight">
+                            empresas
+                        </span>
+                </h1>
+            default:
+                return <h1 className="text-5xl font-semibold">
+                    <span className="block degradedBlue bg-blueLight">
+                            Search and accompany
+                        </span>
+                    companies
+                </h1>
+        }
+    }
+
     return (
         <div className="relative px-6 py-20 md:py-64" id={dictionary["page.home.anchor.target"]}>
             <BackgroundRadialLeft />
