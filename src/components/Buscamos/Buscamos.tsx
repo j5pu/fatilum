@@ -5,7 +5,7 @@ import { Reveal } from "../Reveal"
 import { dataBuscamos } from "./Buscamos.data"
 import Image from "next/image"
 
-export function Buscamos()
+export function Buscamos({ locale, dictionary }: { locale: string, dictionary: any })
 {
     // @ts-ignore
     const onClick = () => {
@@ -13,7 +13,7 @@ export function Buscamos()
     };
 
     return (
-        <div className="relative px-6 py-20 md:py-64" id="buscamos">
+        <div className="relative px-6 py-20 md:py-64" id={dictionary["page.home.anchor.target"]}>
             <BackgroundRadialLeft />
             <div className="grid max-w-5xl mx-auto md:grid-cols-2">
                 <div>

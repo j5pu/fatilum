@@ -4,7 +4,7 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="next13-i18n-localization" />
+    <orderEntry type="module" module-name="nextjs-app-router-i18n-example" />
   </component>
   <component name="PyDocumentationSettings">
     <option name="format" value="GOOGLE" />

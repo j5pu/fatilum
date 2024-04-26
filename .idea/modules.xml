@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/fatilum.iml" filepath="$PROJECT_DIR$/.idea/fatilum.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../Downloads/next13-i18n-localization/.idea/next13-i18n-localization.iml" filepath="$PROJECT_DIR$/../Downloads/next13-i18n-localization/.idea/next13-i18n-localization.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Downloads/nextjs-app-router-i18n-example/.idea/nextjs-app-router-i18n-example.iml" filepath="$PROJECT_DIR$/../Downloads/nextjs-app-router-i18n-example/.idea/nextjs-app-router-i18n-example.iml" />
     </modules>
   </component>
 </project>

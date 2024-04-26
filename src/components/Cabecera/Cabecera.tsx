@@ -3,12 +3,28 @@
 import Image from "next/image"
 import Link from "next/link"
 import { RiMenu3Line } from 'react-icons/ri'
-import { dataCabecera } from "./Cabecera.data"
 import { useState } from "react"
 import { MotionTransition } from "../MotionTransition/"
 
-export function Cabecera() {
+export function Cabecera({ locale, dictionary }: { locale: string, dictionary: any }) {
     const [openMobileMenu, setOpenMobileMenu] = useState(false)
+    const dataCabecera = [
+      {
+        id: 1,
+        name: dictionary["page.home.anchor.About"],
+        idLink: "#" + dictionary["page.home.anchor.about"],
+      },
+      {
+        id: 2,
+        name: dictionary["page.home.anchor.Target"],
+        idLink: "#" + dictionary["page.home.anchor.target"],
+      },
+      {
+        id: 3,
+        name: dictionary["page.home.cabecera.Contact"],
+        idLink: "mailto:jose@mnopi.com",
+      },
+    ];
 
     return (
         <MotionTransition>

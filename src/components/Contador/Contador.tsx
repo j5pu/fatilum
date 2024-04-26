@@ -3,7 +3,7 @@ import CountUp from "react-countup";
 import { MotionTransition } from "../MotionTransition";
 import { dataContador } from "./Contador.data";
 
-export function Contador() {
+export function Contador({ locale, dictionary }: { locale: string, dictionary: object }) {
     return (
         <MotionTransition className="max-w-5xl py-10 mx-auto md:py-64">
         {/*<MotionTransition className="max-w-5xl p-6 mx-auto  mt-5 md:-mt-5">*/}

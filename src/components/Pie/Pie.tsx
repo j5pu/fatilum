@@ -2,9 +2,12 @@ import { Reveal } from "../Reveal";
 import { pieSocialNetworks } from "./Pie.data";
 import Link from "next/link";
 import Image from "next/image";
+import { getIntl } from "@/lib/intl";
 
 
-export function Pie() {
+export async function Pie({ locale }: { locale: string }) {
+    const intl = await getIntl(locale);
+
     return (
         <div className="max-w-5xl p-6 mx-auto mt-10 md:-mt-40">
             <div className="justify-between md:flex">
@@ -17,7 +20,7 @@ export function Pie() {
             <div className="items-center justify-between md:flex">
                 <div className="my-3">
                     <Reveal>
-                        2024 mnopi inc. All Rights Reserved.
+                        {intl.formatMessage({ id: "page.home.pie.allrights" })}
                     </Reveal>
                 </div>
                 <div className="flex gap-5">
