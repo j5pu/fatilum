@@ -4,8 +4,6 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="nextjs-internalization" />
-    <orderEntry type="module" module-name="article-i18n-next-intl" />
   </component>
   <component name="PyDocumentationSettings">
     <option name="format" value="GOOGLE" />
