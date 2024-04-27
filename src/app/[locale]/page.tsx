@@ -15,7 +15,7 @@ export default async function Home({ params: { locale }}: HomeProps ) {
 
   return (
     <>
-      <Header icon={icon} info={info}  />
+      <Header icon={icon} info={info} locale={locale} />
       <About />
       <Companies />
       <Counter />

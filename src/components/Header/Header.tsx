@@ -8,28 +8,33 @@ import { MotionTransition } from "../MotionTransition/"
 import { HostProps } from "@/lib/host";
 import {useTranslations} from "next-intl";
 
-export function Header({ icon, info }: { icon: string, info: HostProps }) {
+export function Header({ icon, info, locale }: { icon: string, info: HostProps, locale: string }) {
     const [openMobileMenu, setOpenMobileMenu] = useState(false)
     const t = useTranslations('Home.Header.CallToAction');
     const About = t("About")
     const Companies = t("Companies")
 
     const dataCabecera = [
-      {
-        id: 1,
-        name: About,
-        idLink: "#" + About.toLowerCase(),
-      },
-      {
-        id: 2,
-        name: Companies,
-        idLink: "#" + Companies.toLowerCase(),
-      },
-      {
-        id: 3,
-        name: t("Contact"),
-        idLink: "mailto:jose@mnopi.com",
-      },
+        {
+            id: 1,
+            name: About,
+            idLink: "#" + About.toLowerCase(),
+        },
+        {
+            id: 2,
+            name: Companies,
+            idLink: "#" + Companies.toLowerCase(),
+        },
+        {
+            id: 3,
+            name: t("Contact"),
+            idLink: "mailto:jose@mnopi.com",
+        },
+        {
+            id: 4,
+            name: locale === "en" ? "Español" : "English",
+            idLink: locale === "en" ? "es" : "en"
+        }
     ];
 
     return (
