@@ -16,11 +16,14 @@ export function getHost(): HostProps {
     const headerHost = headersList.get('host');
     const hostname = headerHost === null ? domain : headerHost;
     const host = hostname.includes("localhost") ? domain : hostname;
+    const nameVercel = host.substring(0, host.lastIndexOf("."))
+    const name = nameVercel.includes("vercel") ? nameVercel.split(".")[0]: nameVercel
+
     return {
         domain: domain,
         headers: headersList,
         host: hostname,
-        name: host.substring(0, host.lastIndexOf(".")),
+        name: name,
         url: "https://" + hostname,
     }
 }
