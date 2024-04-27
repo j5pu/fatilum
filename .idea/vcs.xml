@@ -2,5 +2,7 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../Downloads/article-i18n-next-intl" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../Downloads/nextjs-internalization" vcs="Git" />
   </component>
 </project>

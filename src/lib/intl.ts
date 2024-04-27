@@ -1,16 +1,17 @@
 import "server-only";
 
 import { createIntl } from "@formatjs/intl";
-import type { Locale } from "../../i18n-config";
 
-export async function getIntl(locale: Locale) {
+// @ts-ignore
+export async function getIntl(locale) {
   return createIntl({
     locale: locale,
-    messages: (await import(`../app/dictionaries/${locale}.json`)).default,
+    messages: (await import(`../metadata/${locale}.json`)).default,
   });
 }
 
-export function getDirection(locale: Locale) {
+// @ts-ignore
+export function getDirection(locale) {
   switch (locale) {
     case "en":
     case "es":

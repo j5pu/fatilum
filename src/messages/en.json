@@ -1,0 +1,40 @@
+{
+    "Home": {
+        "Header": {
+            "CallToAction": {
+                "About": "About",
+                "Companies": "Companies",
+                "Contact": "Contact"
+            }
+        },
+        "About": {
+            "Title": "M&A advice for companies",
+            "Description": "Transparency and innovation in mergers and acquisitions, to help the growth of small and medium-sized companies, giving greater clarity about the potential and future of the operation. Access to Buying Technology Companies and Private Equity."
+        },
+        "Companies": {
+            "Title": "Search and accompany companies",
+            "Data": {
+                "rewards": {
+                    "Title": "B2B",
+                    "Description": "Verticals B2B software in specialized markets with an involved team and knowledge of the sector."
+                },
+                "safe": {
+                    "Title": "Recurring",
+                    "Description": "Potential towards a recurring, scalable business model and global reach."
+                },
+                "send": {
+                    "Title": "Generators",
+                    "Description": "Impact cash generators and entry barriers."
+                }
+            }
+        },
+        "Counter": {
+            "1": "countries",
+            "2": "companies",
+            "3": "millions $"
+        },
+        "Footer": {
+            "rights": "All Rights Reserved."
+        }
+    }
+}

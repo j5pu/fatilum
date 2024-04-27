@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../Downloads/article-i18n-next-intl/.idea/article-i18n-next-intl.iml" filepath="$PROJECT_DIR$/../Downloads/article-i18n-next-intl/.idea/article-i18n-next-intl.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/fatilum.iml" filepath="$PROJECT_DIR$/.idea/fatilum.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../Downloads/nextjs-app-router-i18n-example/.idea/nextjs-app-router-i18n-example.iml" filepath="$PROJECT_DIR$/../Downloads/nextjs-app-router-i18n-example/.idea/nextjs-app-router-i18n-example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Downloads/nextjs-internalization/.idea/nextjs-internalization.iml" filepath="$PROJECT_DIR$/../Downloads/nextjs-internalization/.idea/nextjs-internalization.iml" />
     </modules>
   </component>
 </project>

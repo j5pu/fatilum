@@ -1,9 +1,10 @@
 import './globals.css'
 import { Metadata, ResolvingMetadata } from "next";
+import { NextIntlClientProvider, useMessages } from 'next-intl';
 import localFont from 'next/font/local'
 import React from "react";
 import { getDirection, getIntl } from "@/lib/intl";
-import { headers } from 'next/headers';
+import { getHost } from "@/lib/host";
 
 type LayoutProps = {
   params: { locale: string };
@@ -13,42 +14,36 @@ type LayoutProps = {
 const ChicaGogoFont = localFont({
   src: [
     {
-      path: './ChicaGogoNF-Regular.woff2',
+      path: '../../fonts/ChicaGogoNF-Regular.woff2',
       weight: '400',
       style: 'normal',
     },
     {
-      path: './ChicaGogoNF-Bold.woff2',
+      path: '../../fonts/ChicaGogoNF-Bold.woff2',
       weight: '700',
       style: 'normal',
     },
   ],
 })
 
-type RouteProps = {
-  params: { locale: string };
-  searchParams: { [key: string]: string | string[] | undefined };
-};
-
 export async function generateMetadata(
   props: any,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   const intl = await getIntl(props.params.locale);
-  const headersList = headers();
-  let url = "https://" + headersList.get('host');
+  const info = getHost()
 
   return {
-    title: intl.formatMessage({ id: "page.home.title" }),
+    title: `${info.name}: ${intl.formatMessage({ id: "title" })}`,
     description: intl.formatMessage({
-      id: "page.home.description",
+      id: "description",
     }),
     alternates: {
-      canonical: url,
+      canonical: info.url,
       languages: {
-        en: url,
-        es: url + "/es",
-        "x-default": url,
+        en: info.url,
+        es: info.url + "/es",
+        "x-default": info.url,
       },
     },
   };
@@ -58,10 +53,13 @@ export async function generateMetadata(
 export default function RootLayout({params, children}: LayoutProps) {
   const { locale } = params;
   const dir = getDirection(locale);
+  const messages = useMessages();
 
   return (
     <html lang={locale} dir={dir}>
-      <body className={ChicaGogoFont.className}>{children}</body>
+      <NextIntlClientProvider locale={locale} messages={messages}>
+        <body className={ChicaGogoFont.className}>{children}</body>
+      </NextIntlClientProvider>
     </html>
   )
 }
