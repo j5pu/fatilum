@@ -16,9 +16,9 @@ export function getHost(): HostProps {
     const headerHost = headersList.get('host');
     const hostname = headerHost === null ? domain : headerHost;
     const host = hostname.includes("localhost") ? domain : hostname;
-    const split = host.includes("-") ? "-" : "."
-    const nameVercel = host.substring(0, host.lastIndexOf(split))
-    const name = nameVercel.includes("vercel") ? nameVercel.split(".")[0]: nameVercel
+    const nameVercel = host.substring(0, host.lastIndexOf("."))
+    const split = nameVercel.includes("-") ? "-" : "."
+    const name = nameVercel.includes("vercel") ? nameVercel.split(split)[0]: nameVercel
 
     return {
         domain: domain,
