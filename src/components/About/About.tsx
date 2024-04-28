@@ -42,7 +42,9 @@ export async function About() {
                     </Reveal>
                     <Reveal>
                         <div className="my-8">
-                            <button onClick={onClick} className="px-4 py-3 rounded-md bg-blueRadial">{Companies}</button>
+                            <button onClick={onClick} className="px-4 py-3 rounded-md bg-blueRadial">{
+                                Companies}
+                            </button>
                         </div>
                     </Reveal>
                 </div>

@@ -9,14 +9,14 @@
         },
         "About": {
             "Title": "M&A advice for companies",
-            "Description": "Transparency and innovation in mergers and acquisitions, to help the growth of small and medium-sized companies, giving greater clarity about the potential and future of the operation. Access to Buying Technology Companies and Private Equity."
+            "Description": "Transparency and innovation in M&A, to help the growth of SMEs, giving greater clarity about the potential and future of the operation. Access to buying technology companies and Private Equity."
         },
         "Companies": {
-            "Title": "Search and accompany companies",
+            "Title": "Accompany companies:",
             "Data": {
                 "rewards": {
                     "Title": "B2B",
-                    "Description": "Verticals B2B software in specialized markets with an involved team and knowledge of the sector."
+                    "Description": "B2B software verticals in specialized markets, with sector knowledge involved team."
                 },
                 "safe": {
                     "Title": "Recurring",
@@ -24,14 +24,14 @@
                 },
                 "send": {
                     "Title": "Generators",
-                    "Description": "Impact cash generators and entry barriers."
+                    "Description": "Impact, cash generators and entry barriers."
                 }
             }
         },
         "Counter": {
             "1": "countries",
             "2": "companies",
-            "3": "millions $"
+            "3": "million $"
         },
         "Footer": {
             "rights": "All Rights Reserved."

@@ -1,5 +1,5 @@
 import './globals.css'
-import { Metadata, ResolvingMetadata } from "next";
+import { Metadata } from "next";
 import { NextIntlClientProvider, useMessages } from 'next-intl';
 import localFont from 'next/font/local'
 import React from "react";
@@ -28,7 +28,6 @@ const ChicaGogoFont = localFont({
 
 export async function generateMetadata(
   props: any,
-  parent: ResolvingMetadata
 ): Promise<Metadata> {
   const intl = await getIntl(props.params.locale);
   const info = getHost()

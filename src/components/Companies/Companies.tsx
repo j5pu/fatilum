@@ -38,7 +38,9 @@ export function Companies()
                     </Reveal>
                     <Reveal>
                         <div className="my-8">
-                            <button onClick={onClick} className="px-4 py-3 rounded-md bg-blueRadial">{t("Contact")}</button>
+                            <button onClick={onClick} className="px-4 py-3 rounded-md bg-blueRadial">
+                                {t("Contact")}
+                            </button>
                         </div>
                     </Reveal>
                 </div>
