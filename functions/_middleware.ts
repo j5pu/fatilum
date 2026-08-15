@@ -4,7 +4,9 @@
  * https://developers.cloudflare.com/pages/functions/middleware/
  */
 
-export default async (context: any) => {
+const onRequest = async (context: any) => {
   // Pass through to Next.js app
   return context.next();
 };
+
+export default onRequest;
