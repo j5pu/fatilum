@@ -6,7 +6,7 @@ import { Reveal } from "../Reveal"
 import {useTranslations} from "next-intl";
 
 
-export async function About() {
+export function About() {
     const t = useTranslations('Home.Header.CallToAction');
     const a = useTranslations('Home.About');
     const Companies = t("Companies")
