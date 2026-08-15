@@ -4,7 +4,7 @@
  * https://developers.cloudflare.com/pages/functions/middleware/
  */
 
-export const onRequest: PagesFunction = async (context) => {
+export default async (context: any) => {
   // Pass through to Next.js app
   return context.next();
 };
