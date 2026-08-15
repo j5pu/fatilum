@@ -155,24 +155,88 @@ npm run lint            # Run ESLint & TypeScript checks
 - URL: https://fatilum.vercel.app
 
 ### Cloudflare Pages
-- Global CDN deployment
-- Node.js 24 compatible via `wrangler.toml`
-- Middleware support via `functions/_middleware.ts`
-- See [CLOUDFLARE_SETUP.md](./CLOUDFLARE_SETUP.md) for details
+
+**Architecture**
+- Cloudflare Pages Functions (Middleware) handle Node.js 24 compatibility
+- No manual dashboard configuration needed
+- Files: `wrangler.toml` + `functions/_middleware.ts`
+
+**How It Works**
+1. Cloudflare intercepts requests via `functions/_middleware.ts`
+2. Middleware sets up Node.js 24 compatibility environment
+3. Next.js app processes requests through `.next` build output
+4. Responses returned to client
+
+**Deployment**
+Just push to GitHub — Cloudflare Pages auto-deploys:
+- ✅ Uses Node.js 24 (via compatibility flags in `wrangler.toml`)
+- ✅ Loads middleware from `functions/` directory
+- ✅ Builds Next.js with `npm run build`
+- ✅ Serves from `.next` output directory
+
+**Troubleshooting**
+- Build fails with Node 18: Clear Cloudflare cache (Dashboard → Caching → Purge Cache)
+- Middleware not loading: Verify `functions/_middleware.ts` exists and `wrangler.toml` has `[functions]` section
+- Check deployment logs: https://dash.cloudflare.com/ → Pages → fatilum → Deployments
 
 ### GitHub Actions CI/CD
-- **Lint & Type Check** - ESLint, TypeScript validation
-- **Unit Tests** - Jest test suite
-- **Build Check** - Next.js production build
-- **E2E Tests** - Playwright browser tests
-- Branch protection requires all checks to pass
 
-See [CI_CD.md](./CI_CD.md) for workflow details.
+**Workflows**
+
+| Workflow | Trigger | Jobs | Status |
+|----------|---------|------|--------|
+| **Lint** | Push/PR | ESLint + TypeScript | [![Lint](https://github.com/j5pu/fatilum/actions/workflows/lint.yml/badge.svg)](https://github.com/j5pu/fatilum/actions/workflows/lint.yml) |
+| **Tests** | Push/PR | Unit + Build + E2E | [![Tests](https://github.com/j5pu/fatilum/actions/workflows/tests.yml/badge.svg)](https://github.com/j5pu/fatilum/actions/workflows/tests.yml) |
+
+**Branch Protection**
+
+Main branch requires all checks to pass:
+1. ✅ Lint & Type Check (Node 24.x)
+2. ✅ Unit Tests (Node 24.x)
+3. ✅ Build Check (Node 24.x)
+4. ✅ E2E Tests (Node 24.x)
+
+**Deployment Flow**
+```
+Push to GitHub
+         ↓
+GitHub Actions triggered
+         ↓
+Lint & Type Check ✅
+         ↓
+Unit Tests ✅
+         ↓
+Build Check ✅
+         ↓
+E2E Tests ✅
+         ↓
+All passing → Auto-deploy to Vercel & Cloudflare
+         ↓
+✅ Production live
+```
+
+**Workflow Details**
+
+*Lint & Type Check (lint.yml)*
+- Runs: ESLint & TypeScript validation
+- Node.js: 24.x
+- Duration: ~2 minutes
+- Command: `npm run lint`
+
+*Tests (tests.yml)*
+- **Unit Tests:** Jest suite (19 tests, ~10s)
+- **Build Check:** Next.js production build
+- **E2E Tests:** Playwright browser tests (22 tests, ~2-3 minutes)
+- Command: `npm test`, `npm run build`, `npm run e2e`
+
+**Manual Trigger**
+1. Go to **Actions** tab
+2. Select **Lint & Type Check** or **Tests**
+3. Click **Run workflow**
+4. Select branch and confirm
 
 ## 📚 Documentation
 
-- **[CLOUDFLARE_SETUP.md](./CLOUDFLARE_SETUP.md)** - Cloudflare Pages configuration & troubleshooting
-- **[CI_CD.md](./CI_CD.md)** - GitHub Actions CI/CD pipeline documentation
 - **[TEST_SUMMARY.md](./TEST_SUMMARY.md)** - Comprehensive test suite overview
 
 ## 🌐 Internationalization
