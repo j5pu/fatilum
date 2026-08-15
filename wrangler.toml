@@ -1,18 +1,15 @@
-# Cloudflare Pages build configuration
-# https://developers.cloudflare.com/pages/configuration/build-configuration/
+# Cloudflare Pages configuration
+# https://developers.cloudflare.com/pages/platform/functions/
 
-pages_build_output_dir = ".next/static"
+pages_build_output_dir = ".next"
 compatibility_date = "2026-08-15"
 compatibility_flags = ["nodejs_compat"]
 
-[env.production]
-name = "production"
-routes = [
-  { pattern = "*.js", custom_domain = false, zone_id = "default" }
-]
+# Cloudflare Functions
+[functions]
+directory = "functions"
+main = "index.ts"
 
-[build]
-command = "npm ci && npm run build"
 
 
 
