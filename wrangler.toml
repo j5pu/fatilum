@@ -1,11 +1,10 @@
-# Cloudflare Pages configuration
-# https://developers.cloudflare.com/pages/platform/functions/
+# Cloudflare Pages v3 Build Image configuration
+# https://developers.cloudflare.com/pages/configuration/build-image/
+# Supports Node.js 24 (v3 build image includes 22.16.0 by default, but any version can be specified)
 
 pages_build_output_dir = ".next"
 compatibility_date = "2026-08-15"
-compatibility_flags = ["nodejs_compat"]
 
-# Cloudflare Functions
 [functions]
 directory = "functions"
 main = "index.ts"

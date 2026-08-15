@@ -154,29 +154,36 @@ npm run lint            # Run ESLint & TypeScript checks
 - Environment: Node.js 24
 - URL: https://fatilum.vercel.app
 
-### Cloudflare Pages
+### Cloudflare Pages (v3 Build Image)
 
 **Architecture**
-- Cloudflare Pages Functions (Middleware) handle Node.js 24 compatibility
+- Cloudflare Pages v3 Build Image (supports Node.js 24)
 - No manual dashboard configuration needed
-- Files: `wrangler.toml` + `functions/_middleware.ts`
+- Files: `wrangler.toml` + `.node-version` + `functions/_middleware.ts`
 
 **How It Works**
-1. Cloudflare intercepts requests via `functions/_middleware.ts`
-2. Middleware sets up Node.js 24 compatibility environment
+1. Cloudflare v3 build image detects Node.js 24 from `.node-version`
+2. Cloudflare Functions middleware intercepts requests via `functions/_middleware.ts`
 3. Next.js app processes requests through `.next` build output
 4. Responses returned to client
 
 **Deployment**
-Just push to GitHub — Cloudflare Pages auto-deploys:
-- ✅ Uses Node.js 24 (via compatibility flags in `wrangler.toml`)
+Just push to GitHub — Cloudflare Pages v3 auto-deploys:
+- ✅ Uses Node.js 24 (detected from `.node-version` file)
 - ✅ Loads middleware from `functions/` directory
 - ✅ Builds Next.js with `npm run build`
 - ✅ Serves from `.next` output directory
 
+**Configuration Files**
+- `wrangler.toml` - Pages build configuration
+- `.node-version` - Specifies Node.js version (24)
+- `functions/_middleware.ts` - Request middleware
+- `package.json` - Engine requirement (>=24.0.0)
+
 **Troubleshooting**
-- Build fails with Node 18: Clear Cloudflare cache (Dashboard → Caching → Purge Cache)
+- Build still uses Node 18: Clear Cloudflare cache (Dashboard → Caching → Purge Cache)
 - Middleware not loading: Verify `functions/_middleware.ts` exists and `wrangler.toml` has `[functions]` section
+- Wrong Node.js version: Check `.node-version` file contains only version number
 - Check deployment logs: https://dash.cloudflare.com/ → Pages → fatilum → Deployments
 
 ### GitHub Actions CI/CD
