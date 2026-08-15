@@ -1,8 +1,9 @@
-# Cloudflare Workers configuration for Next.js on Pages
+# Cloudflare Pages build configuration
 # https://developers.cloudflare.com/workers/platform/compatibility-dates/
 
+pages_build_output_dir = ".next/static"
+
+[env.production]
 compatibility_date = "2026-08-15"
 compatibility_flags = ["nodejs_compat"]
 
-# Specify Node.js version for Cloudflare Pages build environment
-env = { production = { vars = { NODE_VERSION = "24" } } }
