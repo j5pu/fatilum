@@ -7,6 +7,8 @@
 [![React](https://img.shields.io/badge/React-18.3.1-blue?logo=react)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9.3-blue?logo=typescript)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4.3-38B2AC?logo=tailwind-css)](https://tailwindcss.com/)
+[![GitHub Actions](https://img.shields.io/github/actions/workflow/status/j5pu/fatilum/tests.yml?branch=main&logo=github&label=Tests)](https://github.com/j5pu/fatilum/actions/workflows/tests.yml)
+[![Cloudflare Pages](https://img.shields.io/badge/Deployed-Cloudflare%20Pages-FF6D00?logo=cloudflare)](https://fatilum.pages.dev/)
 [![License](https://img.shields.io/badge/License-MIT-green)]()
 
 ## 🚀 Features
