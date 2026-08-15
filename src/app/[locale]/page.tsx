@@ -6,11 +6,12 @@ import { About } from "@/components/About";
 import { getHost } from "@/lib/host";
 
 type HomeProps = {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 };
 
-export default async function Home({ params: { locale }}: HomeProps ) {
-    const info = getHost()
+export default async function Home({ params }: HomeProps ) {
+    const { locale } = await params;
+    const info = await getHost()
     const icon = `/assets/${info.name}.png`
 
   return (

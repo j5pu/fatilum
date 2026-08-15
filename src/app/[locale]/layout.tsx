@@ -7,7 +7,7 @@ import { getDirection, getIntl } from "@/lib/intl";
 import { getHost } from "@/lib/host";
 
 type LayoutProps = {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
   children: React.ReactNode;
 };
 
@@ -29,8 +29,9 @@ const ChicaGogoFont = localFont({
 export async function generateMetadata(
   props: any,
 ): Promise<Metadata> {
-  const intl = await getIntl(props.params.locale);
-  const info = getHost()
+  const { locale } = await props.params;
+  const intl = await getIntl(locale);
+  const info = await getHost()
 
   return {
     title: `${info.name}: ${intl.formatMessage({ id: "title" })}`,
@@ -49,8 +50,8 @@ export async function generateMetadata(
 }
 
 
-export default function RootLayout({params, children}: LayoutProps) {
-  const { locale } = params;
+export default async function RootLayout({params, children}: LayoutProps) {
+  const { locale } = await params;
   const dir = getDirection(locale);
   const messages = useMessages();
 

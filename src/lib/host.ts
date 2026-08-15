@@ -11,8 +11,8 @@ export type HostProps = {
     url: string;
 };
 
-export function getHost(): HostProps {
-    const headersList = headers();
+export async function getHost(): Promise<HostProps> {
+    const headersList = await headers();
     const headerHost = headersList.get('host');
     const hostname = headerHost === null ? domain : headerHost;
     const host = hostname.includes("localhost") ? domain : hostname;
