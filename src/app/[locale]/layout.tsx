@@ -2,11 +2,10 @@ import './globals.css'
 import { Metadata } from "next";
 import localFont from 'next/font/local'
 import React from "react";
-import Script from 'next/script';
 import { getDirection, getIntl } from "@/lib/intl";
 import { getHost } from "@/lib/host";
 import LayoutClient from "./layout-client";
-import { getEnhancedMetadata, getJsonLd } from "./layout-metadata";
+import { getEnhancedMetadata } from "./layout-metadata";
 import en from '@/messages/en.json';
 import es from '@/messages/es.json';
 
@@ -52,24 +51,18 @@ export default async function RootLayout({params, children}: LayoutProps) {
   const { locale } = await params;
   const dir = getDirection(locale);
   const messages = messagesByLocale[(locale as Locale) || 'en'];
-  const info = await getHost();
-  const intl = await getIntl(locale);
-  const jsonLd = getJsonLd(locale, info, intl);
 
   return (
-    <LayoutClient
-      locale={locale}
-      dir={dir}
-      fontClassName={ChicaGogoFont.className}
-      messages={messages}
-    >
-      <Script
-        id="organization-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        strategy="afterInteractive"
-      />
-      {children}
-    </LayoutClient>
+    <html lang={locale} dir={dir}>
+      <head />
+      <body className={ChicaGogoFont.className}>
+        <LayoutClient
+          locale={locale}
+          messages={messages}
+        >
+          {children}
+        </LayoutClient>
+      </body>
+    </html>
   )
 }
