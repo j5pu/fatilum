@@ -2,6 +2,7 @@
 
 import { NextIntlClientProvider } from 'next-intl';
 import { ThemeProviderWrapper } from '@/providers/theme-provider';
+import { VercelAnalytics } from '@/components/Analytics/Analytics';
 import React from 'react';
 
 interface LayoutClientProps {
@@ -23,7 +24,10 @@ export default function LayoutClient({
     <html lang={locale} dir={dir}>
       <ThemeProviderWrapper>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <body className={fontClassName}>{children}</body>
+          <body className={fontClassName}>
+            {children}
+            <VercelAnalytics />
+          </body>
         </NextIntlClientProvider>
       </ThemeProviderWrapper>
     </html>
