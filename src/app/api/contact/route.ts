@@ -2,7 +2,16 @@ import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(request: NextRequest) {
   try {
-    const { name, email, message } = await request.json();
+    const { name, email, message, website } = await request.json();
+
+    // Honeypot check: real users never fill this hidden field, bots often do.
+    // Pretend success so bots don't learn to skip it.
+    if (website) {
+      return NextResponse.json(
+        { success: true, message: 'Message sent successfully' },
+        { status: 200 }
+      );
+    }
 
     if (!name || !email || !message) {
       return NextResponse.json(
