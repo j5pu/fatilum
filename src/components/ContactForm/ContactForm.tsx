@@ -43,7 +43,7 @@ export function ContactForm({ isOpen, onClose }: { isOpen: boolean; onClose: () 
 
   return (
     <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4">
-      <div className="bg-black border border-[#3F3E45] rounded-lg p-8 max-w-md w-full">
+      <div className="bg-black border border-[#3F3E45] rounded-2xl p-8 max-w-md w-full">
         <h2 className="text-2xl font-bold text-primary mb-6">{t('title')}</h2>
         
         {submitted ? (
@@ -74,7 +74,7 @@ export function ContactForm({ isOpen, onClose }: { isOpen: boolean; onClose: () 
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 bg-transparent text-primary rounded border border-[#3F3E45] focus:border-secondary focus:outline-none"
+                className="w-full px-4 py-2 bg-transparent text-primary rounded-lg border border-[#3F3E45] focus:border-secondary focus:outline-none"
               />
             </div>
             
@@ -86,7 +86,7 @@ export function ContactForm({ isOpen, onClose }: { isOpen: boolean; onClose: () 
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 bg-transparent text-primary rounded border border-[#3F3E45] focus:border-secondary focus:outline-none"
+                className="w-full px-4 py-2 bg-transparent text-primary rounded-lg border border-[#3F3E45] focus:border-secondary focus:outline-none"
               />
             </div>
             
@@ -98,7 +98,7 @@ export function ContactForm({ isOpen, onClose }: { isOpen: boolean; onClose: () 
                 onChange={handleChange}
                 required
                 rows={4}
-                className="w-full px-4 py-2 bg-transparent text-primary rounded border border-[#3F3E45] focus:border-secondary focus:outline-none"
+                className="w-full px-4 py-2 bg-transparent text-primary rounded-lg border border-[#3F3E45] focus:border-secondary focus:outline-none"
               />
             </div>
             
@@ -106,14 +106,14 @@ export function ContactForm({ isOpen, onClose }: { isOpen: boolean; onClose: () 
               <button
                 type="submit"
                 disabled={loading}
-                className="flex-1 bg-blueRadial hover:opacity-90 text-primary font-semibold py-2 rounded disabled:opacity-50"
+                className="flex-1 bg-blueRadial hover:opacity-90 text-primary font-semibold py-2 rounded-lg disabled:opacity-50"
               >
                 {loading ? t('sending') : t('send')}
               </button>
               <button
                 type="button"
                 onClick={onClose}
-                className="flex-1 border border-[#3F3E45] text-primaryDark hover:text-secondary transition-colors font-semibold py-2 rounded"
+                className="flex-1 border border-[#3F3E45] text-primaryDark hover:text-secondary transition-colors font-semibold py-2 rounded-lg"
               >
                 {t('cancel')}
               </button>
