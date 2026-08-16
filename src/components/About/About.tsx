@@ -47,11 +47,11 @@ export function About() {
                             </div>
                         </Reveal>
                     </div>
+                    <MotionTransition className="flex items-center justify-center">
+                        <Image src="/assets/Handshake.svg" alt="Card" width={300} height={300}
+                               className="h-auto w-64 md:w-80" />
+                    </MotionTransition>
                 </div>
-                <MotionTransition className="flex items-center justify-center mt-8">
-                    <Image src="/assets/Handshake.svg" alt="Card" width={300} height={300}
-                           className="h-auto w-64 md:w-80" />
-                </MotionTransition>
             </div>
         )
     }
