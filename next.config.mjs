@@ -14,6 +14,10 @@ const nextConfig = {
       ],
     };
   },
+  onDemandEntries: {
+    maxInactiveAge: 60 * 1000,
+    pagesBufferLength: 5,
+  },
 };
 
 export default withNextIntl(nextConfig);

@@ -5,16 +5,15 @@ import { RiMenu3Line } from 'react-icons/ri'
 import { useState } from "react"
 import { MotionTransition } from "../MotionTransition/"
 import { ContactForm } from "../ContactForm/ContactForm"
+import { LanguageSelector } from "../LanguageSelector"
 import { HostProps } from "@/lib/host";
-import {useTranslations, useLocale} from "next-intl";
-import { Link, usePathname } from "@/navigation";
+import {useTranslations} from "next-intl";
+import { Link } from "@/navigation";
 
 export function Header({ icon, info }: { icon: string, info: HostProps, locale?: string }) {
     const [openMobileMenu, setOpenMobileMenu] = useState(false)
     const [contactFormOpen, setContactFormOpen] = useState(false)
     const t = useTranslations('Home.Header.CallToAction');
-    const currentLocale = useLocale();
-    const pathname = usePathname();
 
     const dataCabecera = [
         {
@@ -32,12 +31,6 @@ export function Header({ icon, info }: { icon: string, info: HostProps, locale?:
             name: t("Contact"),
             idLink: null,
             isContact: true,
-        },
-        {
-            id: 4,
-            name: currentLocale === "en" ? "Español" : "English",
-            idLink: pathname,
-            locale: currentLocale === "en" ? "es" : "en"
         }
     ];
 
@@ -51,8 +44,8 @@ export function Header({ icon, info }: { icon: string, info: HostProps, locale?:
                     <RiMenu3Line className="block text-3xl md:hidden cursor-pointer"
                                  onClick={() => setOpenMobileMenu(!openMobileMenu)} />
                     <div className={`${openMobileMenu ? 'block' : 'hidden'} w-full md:block md:w-auto`}>
-                        <div className="flex flex-col p-4 mt-4 md:p-0 md:flex-row md:space-x-8 md:mt-0 md:border-0">
-                            {dataCabecera.map(({ id, name, idLink, locale: linkLocale, isContact }) => (
+                        <div className="flex flex-col p-4 mt-4 md:p-0 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:items-center">
+                            {dataCabecera.map(({ id, name, idLink, isContact }) => (
                                 <div key={id} className="px-4 transition-all duration-500 ease-in-out">
                                     {isContact ? (
                                         <button
@@ -61,14 +54,13 @@ export function Header({ icon, info }: { icon: string, info: HostProps, locale?:
                                         >
                                             {name}
                                         </button>
-                                    ) : linkLocale ? (
-                                        <Link
-                                            href={idLink || ''}
-                                            locale={linkLocale}
+                                    ) : idLink?.startsWith('#') ? (
+                                        <a
+                                            href={idLink}
                                             className="text-lg hover:text-secondary"
                                         >
                                             {name}
-                                        </Link>
+                                        </a>
                                     ) : (
                                         <Link
                                             href={idLink || ''}
@@ -79,6 +71,9 @@ export function Header({ icon, info }: { icon: string, info: HostProps, locale?:
                                     )}
                                 </div>
                             ))}
+                            <div className="px-4">
+                                <LanguageSelector />
+                            </div>
                         </div>
                     </div>
                 </nav>

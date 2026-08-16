@@ -30,3 +30,39 @@ jest.mock('framer-motion', () => ({
     }
   },
 }))
+
+// Mock next-intl
+jest.mock('next-intl', () => ({
+  useTranslations: function useTranslations() {
+    return function t(key) {
+      return key
+    }
+  },
+  useLocale: function useLocale() {
+    return 'en'
+  },
+}))
+
+// Mock @navigation
+jest.mock('@/navigation', () => ({
+  Link: function MockLink(props) {
+    const React = require('react')
+    return React.createElement(
+      'a',
+      { href: props.href, 'data-locale': props.locale, className: props.className },
+      props.children
+    )
+  },
+  usePathname: function usePathname() {
+    return '/'
+  },
+  useLocale: function useLocale() {
+    return 'en'
+  },
+  useRouter: function useRouter() {
+    return {
+      push: jest.fn(),
+      replace: jest.fn(),
+    }
+  },
+}))

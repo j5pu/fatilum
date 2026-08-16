@@ -74,11 +74,9 @@ test.describe('Navigation', () => {
   test('language switcher exists', async ({ page }) => {
     await page.goto('/en', { waitUntil: 'networkidle' })
     
-    await page.waitForTimeout(500)
-    
-    // Find any language switcher element
-    const content = await page.content()
-    expect(content).toMatch(/Español|English/)
+    // Check for language selector button
+    const langButton = page.locator('button[aria-label="Select language"]');
+    await expect(langButton).toBeVisible();
   })
 
   test('page has links', async ({ page }) => {

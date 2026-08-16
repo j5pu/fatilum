@@ -21,7 +21,7 @@ export function About() {
     };
 
     return (
-            <div className="relative p-4 md:py-40" id={t("About").toLowerCase()}>
+            <div className="relative p-4 md:py-40" id="about">
                 <BackgroundRadialRight/>
                 <div className="grid max-w-5xl mx-auto md:grid-cols-2">
                     <div>
@@ -50,7 +50,7 @@ export function About() {
                 </div>
                 <MotionTransition className="flex items-center justify-center">
                     <Image src="/assets/Handshake.svg" alt="Card" width={300} height={300}
-                           className="h-auto w-72 md:w-full" />
+                           className="h-auto w-64 md:w-80" />
                 </MotionTransition>
             </div>
         </div>

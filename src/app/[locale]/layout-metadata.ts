@@ -8,6 +8,14 @@ export async function getEnhancedMetadata(
   const title = `${info.name}: ${intl.formatMessage({ id: 'title' })}`;
   const description = intl.formatMessage({ id: 'description' });
   const url = locale === 'en' ? info.url : info.url + '/es';
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: info.name,
+    description,
+    url,
+    inLanguage: locale === 'es' ? 'es-ES' : 'en-US',
+  };
 
   return {
     title,
@@ -38,6 +46,9 @@ export async function getEnhancedMetadata(
       index: true,
       follow: true,
       googleBot: 'index, follow',
+    },
+    other: {
+      'application/ld+json': JSON.stringify(jsonLd),
     },
   };
 }

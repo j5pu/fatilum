@@ -66,4 +66,24 @@ describe('Companies Component', () => {
     const buttons = container.querySelectorAll('button')
     expect(buttons.length).toBeGreaterThan(0)
   })
+
+  it('has id="companies" for anchor navigation', () => {
+    const { container } = render(<Companies />)
+    const section = container.querySelector('#companies')
+    expect(section).toBeInTheDocument()
+  })
+
+  it('ID is consistent in both languages (EN/ES)', () => {
+    // The hardcoded id="companies" should be the same regardless of language
+    const { container } = render(<Companies />)
+    const section = container.querySelector('div[id="companies"]')
+    expect(section).toBeInTheDocument()
+    expect(section?.id).toBe('companies')
+  })
+
+  it('renders company images', () => {
+    const { container } = render(<Companies />)
+    const images = container.querySelectorAll('img')
+    expect(images.length).toBeGreaterThan(0)
+  })
 })

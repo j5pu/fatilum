@@ -20,9 +20,10 @@ jest.mock('@/navigation', () => ({
   usePathname: () => '/',
 }))
 
-// Mock MotionTransition to avoid framer-motion complexity
-jest.mock('@/components/MotionTransition', () => ({
-  MotionTransition: ({ children }: any) => <>{children}</>,
+// Mock react-icons for testing
+jest.mock('react-icons/ri', () => ({
+  RiMenu3Line: ({ ...props }: any) => <div data-testid="menu-icon" {...props} />,
+  RiGlobalLine: ({ ...props }: any) => <div data-testid="globe-icon" {...props} />,
 }))
 
 // Mock next/image with better prop handling
@@ -53,11 +54,15 @@ describe('Header Component', () => {
     expect(screen.getByText('Contact')).toBeInTheDocument()
   })
 
-  it('displays correct locale switcher for English', () => {
+  it('navigation links point to correct anchors', () => {
     render(<Header icon="/assets/mnopi.png" info={mockInfo} />)
     
-    // Should show Spanish option when on English
-    expect(screen.getByText('Español')).toBeInTheDocument()
+    const aboutLink = screen.getByText('About').closest('a')
+    const companiesLink = screen.getByText('Companies').closest('a')
+    
+    // Verify links use hardcoded English IDs (work in all languages)
+    expect(aboutLink).toHaveAttribute('href', '#about')
+    expect(companiesLink).toHaveAttribute('href', '#companies')
   })
 
   it('opens contact form modal when Contact button clicked', () => {
