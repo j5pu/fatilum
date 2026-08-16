@@ -53,7 +53,7 @@ export default async function RootLayout({params, children}: LayoutProps) {
   const messages = messagesByLocale[(locale as Locale) || 'en'];
 
   return (
-    <html lang={locale} dir={dir}>
+    <html lang={locale} dir={dir} suppressHydrationWarning>
       <head />
       <body className={ChicaGogoFont.className}>
         <LayoutClient
