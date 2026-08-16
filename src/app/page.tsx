@@ -1,18 +1,20 @@
 import { headers } from 'next/headers';
 import { redirect } from 'next/navigation';
+import { detectPreferredLanguage } from '@/lib/language-detector';
+import { defaultLocale } from '@/i18n/config';
 
 export default async function RootPage() {
   const headersList = await headers();
-  const acceptLanguage = headersList.get('accept-language') || '';
+  const acceptLanguage = headersList.get('accept-language');
   
-  // Check if browser prefers Spanish (es more than en)
-  const esWeight = parseInt(acceptLanguage.match(/es(?:;q=([\d.]+))?/)?.[1] || '1');
-  const enWeight = parseInt(acceptLanguage.match(/en(?:;q=([\d.]+))?/)?.[1] || '0.9');
+  const preferredLanguage = detectPreferredLanguage(acceptLanguage);
   
-  if (esWeight > enWeight) {
-    redirect('/es');
+  // If preferred language is not default, redirect to it
+  // Default language stays at root (/) via URL rewrite
+  if (preferredLanguage !== defaultLocale) {
+    redirect(`/${preferredLanguage}`);
   }
   
-  // For English (default), content served via rewrite in next.config
+  // For default language, content served via rewrite in next.config
   return null;
 }
