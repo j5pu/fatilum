@@ -3,7 +3,6 @@
 import { NextIntlClientProvider } from 'next-intl';
 import { ThemeProviderWrapper } from '@/providers/theme-provider';
 import { VercelAnalytics } from '@/components/Analytics/Analytics';
-import Script from 'next/script';
 import React from 'react';
 
 interface LayoutClientProps {
@@ -27,11 +26,9 @@ export default function LayoutClient({
     <html lang={locale} dir={dir}>
       <head>
         {jsonLd && (
-          <Script
-            id="organization-schema"
+          <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-            strategy="beforeInteractive"
           />
         )}
       </head>
