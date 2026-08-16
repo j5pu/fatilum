@@ -5,7 +5,6 @@ import {footerSocialNetworks} from "./Footer.data";
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from 'react';
-import { useTranslations } from 'next-intl';
 import { useLocale } from 'next-intl';
 import { ContactForm } from "../ContactForm/ContactForm";
 import { HostProps } from "@/lib/host";
@@ -13,11 +12,10 @@ import { HostProps } from "@/lib/host";
 
 export function Footer({ icon, info }: { icon: string, info: HostProps }) {
     const [contactFormOpen, setContactFormOpen] = useState(false);
-    const t = useTranslations('Home.Footer');
     const locale = useLocale();
     const date = new Date();
     const year = date.getFullYear();
-    const rights = `${year} fatilum OÜ ${t("rights")}`
+    const rights = `© ${year} fatilum OÜ`
 
     return (
         <>
