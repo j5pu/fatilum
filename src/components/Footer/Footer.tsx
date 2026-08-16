@@ -12,8 +12,7 @@ export function Footer({ icon, info }: { icon: string, info: HostProps }) {
     const t = useTranslations('Home.Footer');
     const date = new Date();
     const year = date.getFullYear();
-    const suffix = info.name === "mnopi" ? "inc." : "SRL."
-    const rights = `${year} ${info.name} ${suffix} ${t("rights")}`
+    const rights = `${year} fatilum OÜ ${t("rights")}`
 
     return (
         <div className="max-w-5xl p-6 mx-auto mt-10 md:-mt-40">
