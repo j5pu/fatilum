@@ -7,8 +7,6 @@ test.describe('Contact Form Integration', () => {
     await page.waitForLoadState('networkidle');
   });
 
-  test.skip(!!process.env.CI, 'Contact form tests skip in CI due to selector flakiness');
-
   test('Contact form opens from Header contact button', async ({ page }) => {
     // Find Contact button - it's a button that opens the form, check for any button in nav
     const buttons = page.locator('header button');

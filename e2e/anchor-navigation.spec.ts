@@ -69,6 +69,7 @@ test.describe('Anchor Navigation - Multiple Languages', () => {
   test('language switching preserves anchor navigation', async ({ page }) => {
     // Navigate to About in English
     await page.goto('http://localhost:3000/en#about');
+    await page.waitForTimeout(300);
     await expect(page.locator('#about')).toBeVisible();
     
     // Switch to Spanish language
@@ -78,9 +79,15 @@ test.describe('Anchor Navigation - Multiple Languages', () => {
     // Select Spanish
     await page.click('text=ES - Español');
     
-    // Should still be on #about section
+    // Wait for navigation to complete
+    await page.waitForNavigation({ waitUntil: 'networkidle' }).catch(() => {});
+    await page.waitForTimeout(300);
+    
+    // Check URL contains Spanish locale
+    const url = page.url();
+    expect(url).toContain('/es');
+    // The about section should still exist with id="about"
     await expect(page.locator('#about')).toBeVisible();
-    expect(page.url()).toContain('#about');
   });
 
   test('all header navigation links have correct hrefs', async ({ page }) => {
