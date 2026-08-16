@@ -85,8 +85,9 @@ test.describe('Language Selector in Header', () => {
     // Wait for navigation
     await page.waitForNavigation({ waitUntil: 'networkidle' }).catch(() => {});
     
-    // Should preserve the Companies anchor
-    expect(page.url()).toContain('/es#companies').or.toContain('/es');
+    // Should preserve the Companies anchor or just be on ES
+    const url = page.url()
+    expect(url).toMatch(/\/es/)
   });
 
   test('Language dropdown closes after selection', async ({ page }) => {
