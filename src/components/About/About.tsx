@@ -21,7 +21,7 @@ export function About() {
     };
 
     return (
-            <div className="relative p-4 md:py-40" id={t("About").toLowerCase()}>
+            <div className="relative p-4 md:py-40" id="about">
                 <BackgroundRadialRight/>
                 <div className="grid max-w-5xl mx-auto md:grid-cols-2 gap-8">
                     <div>
