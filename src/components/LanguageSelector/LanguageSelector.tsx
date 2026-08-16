@@ -18,7 +18,7 @@ export function LanguageSelector() {
         { code: 'it', label: 'IT - Italiano' },
         { code: 'fr', label: 'FR - Français' },
         { code: 'de', label: 'DE - Deutsch' },
-    ]
+    ].sort((a, b) => a.label.localeCompare(b.label))
 
     const linkClassName = (code: string) =>
         `block px-4 py-2 text-sm hover:bg-secondary hover:bg-opacity-10 transition-colors ${

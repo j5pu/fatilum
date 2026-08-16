@@ -17,7 +17,10 @@ export function About() {
     const restWords = splitTitle.slice(2).join(' ')
 
     const onClick = () => {
-        window.location.href = "#" + Companies.toLowerCase();
+        const element = document.getElementById('companies');
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
     };
 
     return (
