@@ -4,7 +4,7 @@ import React from "react";
 import { getDirection, getIntl } from "@/lib/intl";
 import { getHost } from "@/lib/host";
 import LayoutClient from "./layout-client";
-import { getEnhancedMetadata, getJsonLd } from "./layout-metadata";
+import { getEnhancedMetadata } from "./layout-metadata";
 import en from '@/messages/en.json';
 import es from '@/messages/es.json';
 
@@ -35,19 +35,10 @@ export default async function RootLayout({params, children}: LayoutProps) {
   const { locale } = await params;
   const dir = getDirection(locale);
   const messages = messagesByLocale[(locale as Locale) || 'en'];
-  const intl = await getIntl(locale);
-  const info = await getHost();
-  const jsonLd = getJsonLd(locale, info, intl);
 
   return (
     <html lang={locale} dir={dir} suppressHydrationWarning>
-      <head>
-        <title>{info.name}</title>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-      </head>
+      <head />
       <body>
         <LayoutClient
           locale={locale}
