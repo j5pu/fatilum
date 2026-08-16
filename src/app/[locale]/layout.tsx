@@ -51,16 +51,18 @@ export default async function RootLayout({params, children}: LayoutProps) {
   const { locale } = await params;
   const dir = getDirection(locale);
   const messages = messagesByLocale[(locale as Locale) || 'en'];
-  const info = await getHost();
 
   return (
-    <LayoutClient
-      locale={locale}
-      dir={dir}
-      fontClassName={ChicaGogoFont.className}
-      messages={messages}
-    >
-      {children}
-    </LayoutClient>
+    <html lang={locale} dir={dir}>
+      <head />
+      <body className={ChicaGogoFont.className}>
+        <LayoutClient
+          locale={locale}
+          messages={messages}
+        >
+          {children}
+        </LayoutClient>
+      </body>
+    </html>
   )
 }
