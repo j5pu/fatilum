@@ -1,6 +1,7 @@
 'use client';
 
 import { NextIntlClientProvider } from 'next-intl';
+import { ThemeProviderWrapper } from '@/providers/theme-provider';
 import React from 'react';
 
 interface LayoutClientProps {
@@ -20,9 +21,11 @@ export default function LayoutClient({
 }: LayoutClientProps) {
   return (
     <html lang={locale} dir={dir}>
-      <NextIntlClientProvider locale={locale} messages={messages}>
-        <body className={fontClassName}>{children}</body>
-      </NextIntlClientProvider>
+      <ThemeProviderWrapper>
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <body className={fontClassName}>{children}</body>
+        </NextIntlClientProvider>
+      </ThemeProviderWrapper>
     </html>
   );
 }
