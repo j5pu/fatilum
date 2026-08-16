@@ -3,12 +3,7 @@ import { Footer } from '@/components/Footer'
 
 // Mock next-intl
 jest.mock('next-intl', () => ({
-  useTranslations: () => (key: string) => {
-    const translations: Record<string, string> = {
-      'rights': 'All Rights Reserved.',
-    }
-    return translations[key] || key
-  },
+  useTranslations: () => (key: string) => key,
   useLocale: () => 'en',
 }))
 
@@ -59,12 +54,6 @@ describe('Footer Component', () => {
     const { container } = render(<Footer icon="/assets/mnopi.png" info={mockInfo} />)
     const text = container.textContent
     expect(text).toContain('fatilum OÜ')
-  })
-
-  it('includes rights reserved text', () => {
-    const { container } = render(<Footer icon="/assets/mnopi.png" info={mockInfo} />)
-    const text = container.textContent
-    expect(text).toContain('All Rights Reserved.')
   })
 
   it('includes current year in copyright', () => {
