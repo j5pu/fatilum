@@ -54,6 +54,13 @@ export function Header({ icon, info }: { icon: string, info: HostProps, locale?:
                                         >
                                             {name}
                                         </button>
+                                    ) : idLink?.startsWith('#') ? (
+                                        <a
+                                            href={idLink}
+                                            className="text-lg hover:text-secondary"
+                                        >
+                                            {name}
+                                        </a>
                                     ) : (
                                         <Link
                                             href={idLink || ''}
