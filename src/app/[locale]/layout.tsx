@@ -5,7 +5,7 @@ import React from "react";
 import { getDirection, getIntl } from "@/lib/intl";
 import { getHost } from "@/lib/host";
 import LayoutClient from "./layout-client";
-import { getEnhancedMetadata, getJsonLd } from "./layout-metadata";
+import { getEnhancedMetadata } from "./layout-metadata";
 import en from '@/messages/en.json';
 import es from '@/messages/es.json';
 
@@ -52,8 +52,6 @@ export default async function RootLayout({params, children}: LayoutProps) {
   const dir = getDirection(locale);
   const messages = messagesByLocale[(locale as Locale) || 'en'];
   const info = await getHost();
-  const intl = await getIntl(locale);
-  const jsonLd = getJsonLd(locale, info, intl);
 
   return (
     <LayoutClient
@@ -61,7 +59,6 @@ export default async function RootLayout({params, children}: LayoutProps) {
       dir={dir}
       fontClassName={ChicaGogoFont.className}
       messages={messages}
-      jsonLd={jsonLd}
     >
       {children}
     </LayoutClient>

@@ -11,7 +11,6 @@ interface LayoutClientProps {
   children: React.ReactNode;
   fontClassName: string;
   messages: any;
-  jsonLd?: any;
 }
 
 export default function LayoutClient({
@@ -20,18 +19,10 @@ export default function LayoutClient({
   children,
   fontClassName,
   messages,
-  jsonLd,
 }: LayoutClientProps) {
   return (
     <html lang={locale} dir={dir}>
-      <head>
-        {jsonLd && (
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-          />
-        )}
-      </head>
+      <head />
       <ThemeProviderWrapper>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <body className={fontClassName}>
