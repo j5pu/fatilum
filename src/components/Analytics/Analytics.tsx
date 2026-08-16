@@ -1,7 +1,12 @@
 'use client'
 
-import { Analytics } from '@vercel/analytics/react'
+import Script from 'next/script'
 
 export function VercelAnalytics() {
-  return <Analytics />
+  return (
+    <Script
+      src="/_vercel/insights/script.js"
+      strategy="afterInteractive"
+    />
+  )
 }
