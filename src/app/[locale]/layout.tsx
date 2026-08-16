@@ -54,7 +54,10 @@ export async function generateMetadata(
 export default async function RootLayout({params, children}: LayoutProps) {
   const { locale } = await params;
   const dir = getDirection(locale);
-  const messages = await getMessages();
+  const allMessages = await getMessages();
+  
+  // NextIntlClientProvider expects messages for the current locale only
+  const messages = allMessages as Record<string, any>;
 
   return (
     <LayoutClient
