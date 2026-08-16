@@ -1,4 +1,6 @@
 {
+    "title": "M&A advice for companies",
+    "description": "Transparency and innovation in M&A, to help the growth of SMEs, giving greater clarity about the potential and future of the operation. Access to buying technology companies and Private Equity.",
     "Home": {
         "Header": {
             "CallToAction": {
@@ -35,6 +37,16 @@
         },
         "Footer": {
             "rights": "All Rights Reserved."
+        },
+        "ContactForm": {
+            "title": "Contact Us",
+            "name": "Name",
+            "email": "Email",
+            "message": "Message",
+            "send": "Send",
+            "sending": "Sending...",
+            "cancel": "Cancel",
+            "success": "Message sent successfully!"
         }
     },
     "Privacy": {

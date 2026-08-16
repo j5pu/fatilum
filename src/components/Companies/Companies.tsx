@@ -5,6 +5,8 @@ import { Reveal } from "../Reveal"
 import Image from "next/image"
 import {useTranslations} from "next-intl";
 import {CompaniesData} from "@/components/Companies/Companies.types";
+import { useState } from "react";
+import { ContactForm } from "../ContactForm/ContactForm";
 
 export function Companies()
 {
@@ -15,6 +17,7 @@ export function Companies()
     const firstWord = splitTitle[0]
     const restWords = splitTitle.slice(1).join(' ')
     const Data = useTranslations('Home.Companies.Data');
+    const [contactFormOpen, setContactFormOpen] = useState(false)
 
     const items = ["rewards", "safe", "send"]
     let dataCompanies: CompaniesData = items.map(function (e) {
@@ -22,7 +25,7 @@ export function Companies()
     });
 
     const onClick = () => {
-        window.location.href = "mailto:jose@mnopi.com";
+        setContactFormOpen(true);
     };
 
     return (
@@ -59,6 +62,7 @@ export function Companies()
                     ))}
                 </div>
             </div>
+            <ContactForm isOpen={contactFormOpen} onClose={() => setContactFormOpen(false)} />
         </div>
     )
 }

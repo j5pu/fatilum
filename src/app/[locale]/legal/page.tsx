@@ -1,6 +1,5 @@
 import { useTranslations } from 'next-intl';
 import { Metadata } from 'next';
-import { getIntl } from '@/lib/intl';
 
 export async function generateMetadata({
   params,
@@ -8,11 +7,20 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const intl = await getIntl(locale);
+
+  const titles = {
+    en: 'Legal Notice',
+    es: 'Aviso Legal'
+  } as const;
+
+  const descriptions = {
+    en: 'Legal Notice for fatilum OÜ',
+    es: 'Aviso Legal para fatilum OÜ'
+  } as const;
 
   return {
-    title: intl.formatMessage({ id: 'Legal.title' }),
-    description: intl.formatMessage({ id: 'Legal.description' }),
+    title: titles[locale as keyof typeof titles] || 'Legal Notice',
+    description: descriptions[locale as keyof typeof descriptions] || 'Legal Notice for fatilum OÜ',
   };
 }
 
@@ -20,7 +28,7 @@ export default function LegalNotice() {
   const t = useTranslations('Legal');
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-900 to-slate-800 py-16 px-4 md:px-8 text-white">
+    <div className="min-h-screen py-16 px-4 md:px-8 text-white">
       <div className="max-w-3xl mx-auto">
         <h1 className="text-4xl font-bold mb-8 text-white">{t('title')}</h1>
 
@@ -58,9 +66,6 @@ export default function LegalNotice() {
           <section>
             <h2 className="text-2xl font-semibold mb-4 text-white">{t('sections.contact.title')}</h2>
             <p className="text-gray-300">{t('sections.contact.text')}</p>
-            <p className="text-gray-300 mt-2">
-              <a href="mailto:jose@mnopi.com" className="text-blue-400 hover:text-blue-300">jose@mnopi.com</a>
-            </p>
           </section>
         </div>
 

@@ -1,4 +1,6 @@
 {
+    "title": "Asesoramiento M&A para empresas IT",
+    "description": "Transparencia e innovación en fusiones y adquisiciones, para ayudar al crecimiento de PYMEs, dando mayor claridad sobre el potencial y futuro de la operación. Acceso a empresas tecnológicas compradoras e inversores privados.",
     "Home": {
         "Header": {
             "CallToAction": {
@@ -35,6 +37,16 @@
         },
         "Footer": {
             "rights": "Todos los Derechos Reservados."
+        },
+        "ContactForm": {
+            "title": "Contáctenos",
+            "name": "Nombre",
+            "email": "Correo Electrónico",
+            "message": "Mensaje",
+            "send": "Enviar",
+            "sending": "Enviando...",
+            "cancel": "Cancelar",
+            "success": "¡Mensaje enviado con éxito!"
         }
     },
     "Privacy": {

@@ -1,14 +1,15 @@
-import { render } from '@testing-library/react'
+import { render, screen, fireEvent } from '@testing-library/react'
 import { Footer } from '@/components/Footer'
 
 // Mock next-intl
 jest.mock('next-intl', () => ({
   useTranslations: () => (key: string) => {
     const translations: Record<string, string> = {
-      'rights': 'All rights reserved.',
+      'rights': 'All Rights Reserved.',
     }
     return translations[key] || key
   },
+  useLocale: () => 'en',
 }))
 
 // Mock next/image with proper prop handling
@@ -57,13 +58,13 @@ describe('Footer Component', () => {
   it('includes company name in copyright', () => {
     const { container } = render(<Footer icon="/assets/mnopi.png" info={mockInfo} />)
     const text = container.textContent
-    expect(text).toContain('mnopi')
+    expect(text).toContain('fatilum OÜ')
   })
 
   it('includes rights reserved text', () => {
     const { container } = render(<Footer icon="/assets/mnopi.png" info={mockInfo} />)
     const text = container.textContent
-    expect(text).toContain('rights reserved')
+    expect(text).toContain('All Rights Reserved.')
   })
 
   it('includes current year in copyright', () => {
@@ -73,16 +74,16 @@ describe('Footer Component', () => {
     expect(text).toContain(currentYear)
   })
 
-  it('shows inc suffix for mnopi', () => {
-    const { container } = render(<Footer icon="/assets/mnopi.png" info={mockInfo} />)
-    const text = container.textContent
-    expect(text).toContain('inc.')
+  it('opens contact form modal when email icon clicked', () => {
+    render(<Footer icon="/assets/mnopi.png" info={mockInfo} />)
+    const emailButton = screen.getAllByRole('button')[0]
+    fireEvent.click(emailButton)
+    expect(screen.getByText('title')).toBeInTheDocument()
   })
 
-  it('shows SRL suffix for other companies', () => {
-    const otherInfo = { ...mockInfo, name: 'other' }
-    const { container } = render(<Footer icon="/assets/other.png" info={otherInfo} />)
-    const text = container.textContent
-    expect(text).toContain('SRL.')
+  it('links to LinkedIn company page', () => {
+    const { container } = render(<Footer icon="/assets/mnopi.png" info={mockInfo} />)
+    const linkedInLink = container.querySelector('a[href="https://linkedin.com/company/fatilum"]')
+    expect(linkedInLink).toBeInTheDocument()
   })
 })

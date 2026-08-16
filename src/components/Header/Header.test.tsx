@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react'
+import { render, screen, fireEvent } from '@testing-library/react'
 import { Header } from '@/components/Header'
 
 // Mock next-intl
@@ -60,10 +60,13 @@ describe('Header Component', () => {
     expect(screen.getByText('Español')).toBeInTheDocument()
   })
 
-  it('has email link for contact', () => {
+  it('opens contact form modal when Contact button clicked', () => {
     render(<Header icon="/assets/mnopi.png" info={mockInfo} />)
-    
-    const contactLink = screen.getByText('Contact')
-    expect(contactLink.closest('a')).toHaveAttribute('href', 'mailto:jose@mnopi.com')
+
+    const contactButton = screen.getByText('Contact')
+    expect(contactButton.tagName).toBe('BUTTON')
+
+    fireEvent.click(contactButton)
+    expect(screen.getByText('title')).toBeInTheDocument()
   })
 })

@@ -6,7 +6,7 @@ import { createIntl } from "@formatjs/intl";
 export async function getIntl(locale) {
   return createIntl({
     locale: locale,
-    messages: (await import(`../metadata/${locale}.json`)).default,
+    messages: (await import(`../messages/${locale}.json`)).default,
   });
 }
 
