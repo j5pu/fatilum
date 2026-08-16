@@ -23,11 +23,20 @@ export function Footer({ icon, info }: { icon: string, info: HostProps }) {
             </div>
             <div className="border-[#3F3E45] border-[1px] my-7"/>
 
-            <div className="items-center justify-between md:flex">
+            <div className="items-center justify-between md:flex flex-col md:flex-row gap-6">
                 <div className="my-3">
                     <Reveal>
                         {rights}
                     </Reveal>
+                </div>
+                <div className="flex gap-4 text-sm">
+                    <Link href="/privacy" className="text-gray-600 hover:text-gray-900">
+                        Privacy Policy
+                    </Link>
+                    <span className="text-gray-300">|</span>
+                    <Link href="/legal" className="text-gray-600 hover:text-gray-900">
+                        Legal Notice
+                    </Link>
                 </div>
                 <div className="flex gap-5">
                     {footerSocialNetworks.map(({id, icon, link}) => (
