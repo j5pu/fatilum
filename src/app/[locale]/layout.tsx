@@ -2,7 +2,6 @@ import './globals.css'
 import { Metadata } from "next";
 import localFont from 'next/font/local'
 import React from "react";
-import Script from 'next/script';
 import { getDirection, getIntl } from "@/lib/intl";
 import { getHost } from "@/lib/host";
 import LayoutClient from "./layout-client";
@@ -62,13 +61,8 @@ export default async function RootLayout({params, children}: LayoutProps) {
       dir={dir}
       fontClassName={ChicaGogoFont.className}
       messages={messages}
+      jsonLd={jsonLd}
     >
-      <Script
-        id="organization-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        strategy="afterInteractive"
-      />
       {children}
     </LayoutClient>
   )
