@@ -16,7 +16,7 @@
             "Data": {
                 "rewards": {
                     "Title": "B2B",
-                    "Description": "Software B2B verticales en mercados especializados, con equipo implicado y conocimiento del sector."
+                    "Description": "B2B verticales en mercados especializados, con equipo implicado y conocimiento del sector."
                 },
                 "safe": {
                     "Title": "Recurrente",
@@ -36,5 +36,79 @@
         "Footer": {
             "rights": "Todos los Derechos Reservados."
         }
+    },
+    "Privacy": {
+        "title": "Política de Privacidad",
+        "description": "Política de Privacidad para fatilum OÜ",
+        "sections": {
+            "introduction": {
+                "title": "Introducción",
+                "content": "En fatilum OÜ, nos comprometemos a proteger su privacidad y garantizar una experiencia positiva en nuestro sitio web. Esta Política de Privacidad explica cómo recopilamos, utilizamos, divulgamos y protegemos su información."
+            },
+            "dataCollection": {
+                "title": "Recopilación de Datos",
+                "content": "Recopilamos información que nos proporciona directamente, por ejemplo, cuando nos contacta o solicita nuestros servicios.",
+                "items": [
+                    "Información de contacto (nombre, correo electrónico, número de teléfono)",
+                    "Información de la empresa (nombre de la empresa, sector, tamaño)",
+                    "Preferencias de comunicación"
+                ]
+            },
+            "cookies": {
+                "title": "Cookies",
+                "content": "No utilizamos cookies ni tecnologías de rastreo en nuestro sitio web. Su experiencia de navegación no es rastreada."
+            },
+            "userRights": {
+                "title": "Sus Derechos",
+                "content": "Según el RGPD y otras regulaciones de privacidad, tiene los siguientes derechos:",
+                "items": [
+                    "Derecho a acceder a sus datos personales",
+                    "Derecho a corregir datos inexactos",
+                    "Derecho a solicitar la eliminación de sus datos",
+                    "Derecho a oponerse al tratamiento"
+                ]
+            },
+            "contact": {
+                "title": "Información de Contacto",
+                "registry": "Código de Registro",
+                "vat": "NIF",
+                "address": "Dirección",
+                "email": "Correo Electrónico"
+            }
+        },
+        "lastUpdated": "Última actualización: Agosto 2026"
+    },
+    "Legal": {
+        "title": "Aviso Legal",
+        "description": "Aviso Legal para fatilum OÜ",
+        "sections": {
+            "company": {
+                "title": "Información de la Empresa",
+                "registry": "Código de Registro",
+                "vat": "NIF",
+                "address": "Dirección"
+            },
+            "dataProtection": {
+                "title": "Protección de Datos",
+                "content": "Cumplimos con el RGPD y las regulaciones de protección de datos de Estonia. Los datos personales se procesan de conformidad con las leyes aplicables y se protegen con medidas de seguridad apropiadas."
+            },
+            "intellectualProperty": {
+                "title": "Propiedad Intelectual",
+                "content": "Todo el contenido en este sitio web, incluido texto, gráficos, logotipos e imágenes, es propiedad de fatilum OÜ o de sus proveedores de contenido y está protegido por las leyes de derechos de autor internacionales."
+            },
+            "liability": {
+                "title": "Limitación de Responsabilidad",
+                "content": "La información proporcionada en este sitio web es solo para propósitos informativos y no constituye asesoramiento legal o financiero. fatilum OÜ no es responsable de ningún daño resultante del uso o la imposibilidad de usar este sitio web."
+            },
+            "governing": {
+                "title": "Ley Aplicable",
+                "content": "Estos términos y condiciones se rigen por las leyes de Estonia."
+            },
+            "contact": {
+                "title": "Contáctenos",
+                "text": "Para cualquier consulta legal, contáctenos en:"
+            }
+        },
+        "lastUpdated": "Última actualización: Agosto 2026"
     }
 }

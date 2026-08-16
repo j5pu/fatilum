@@ -16,7 +16,7 @@
             "Data": {
                 "rewards": {
                     "Title": "B2B",
-                    "Description": "B2B software verticals in specialized markets, with sector knowledge involved team."
+                    "Description": "B2B verticals in specialized markets, with sector knowledge involved team."
                 },
                 "safe": {
                     "Title": "Recurring",
@@ -36,5 +36,79 @@
         "Footer": {
             "rights": "All Rights Reserved."
         }
+    },
+    "Privacy": {
+        "title": "Privacy Policy",
+        "description": "Privacy Policy for fatilum OÜ",
+        "sections": {
+            "introduction": {
+                "title": "Introduction",
+                "content": "At fatilum OÜ, we are committed to protecting your privacy and ensuring you have a positive experience on our website. This Privacy Policy explains how we collect, use, disclose, and safeguard your information."
+            },
+            "dataCollection": {
+                "title": "Data Collection",
+                "content": "We collect information that you provide directly to us, such as when you contact us or request our services.",
+                "items": [
+                    "Contact information (name, email, phone number)",
+                    "Company information (company name, industry, size)",
+                    "Communication preferences"
+                ]
+            },
+            "cookies": {
+                "title": "Cookies",
+                "content": "We do not use cookies or tracking technologies on our website. Your browsing experience is not tracked."
+            },
+            "userRights": {
+                "title": "Your Rights",
+                "content": "Under GDPR and other privacy regulations, you have the following rights:",
+                "items": [
+                    "Right to access your personal data",
+                    "Right to correct inaccurate data",
+                    "Right to request deletion of your data",
+                    "Right to object to processing"
+                ]
+            },
+            "contact": {
+                "title": "Contact Information",
+                "registry": "Registry Code",
+                "vat": "VAT",
+                "address": "Address",
+                "email": "Email"
+            }
+        },
+        "lastUpdated": "Last updated: August 2026"
+    },
+    "Legal": {
+        "title": "Legal Notice",
+        "description": "Legal Notice for fatilum OÜ",
+        "sections": {
+            "company": {
+                "title": "Company Information",
+                "registry": "Registry Code",
+                "vat": "VAT",
+                "address": "Address"
+            },
+            "dataProtection": {
+                "title": "Data Protection",
+                "content": "We comply with GDPR and Estonian data protection regulations. Personal data is processed in accordance with applicable laws and is protected with appropriate security measures."
+            },
+            "intellectualProperty": {
+                "title": "Intellectual Property",
+                "content": "All content on this website, including text, graphics, logos, and images, is the property of fatilum OÜ or its content suppliers and is protected by international copyright laws."
+            },
+            "liability": {
+                "title": "Limitation of Liability",
+                "content": "The information provided on this website is for informational purposes only and does not constitute legal or financial advice. fatilum OÜ is not liable for any damages arising from the use or inability to use this website."
+            },
+            "governing": {
+                "title": "Governing Law",
+                "content": "These terms and conditions are governed by and construed in accordance with the laws of Estonia."
+            },
+            "contact": {
+                "title": "Contact Us",
+                "text": "For any legal inquiries, please contact us at:"
+            }
+        },
+        "lastUpdated": "Last updated: August 2026"
     }
 }
