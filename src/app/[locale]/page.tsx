@@ -10,7 +10,7 @@ type HomeProps = {
 };
 
 export default async function Home({ params: { locale }}: HomeProps ) {
-    const info = getHost()
+    const info = await getHost()
     const icon = `/assets/${info.name}.png`
 
   return (

@@ -1,13 +1,13 @@
 import './globals.css'
 import { Metadata } from "next";
-import { NextIntlClientProvider, useMessages } from 'next-intl';
 import localFont from 'next/font/local'
 import React from "react";
 import { getDirection, getIntl } from "@/lib/intl";
 import { getHost } from "@/lib/host";
+import LayoutClient from "./layout-client";
 
 type LayoutProps = {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
   children: React.ReactNode;
 };
 
@@ -29,8 +29,9 @@ const ChicaGogoFont = localFont({
 export async function generateMetadata(
   props: any,
 ): Promise<Metadata> {
-  const intl = await getIntl(props.params.locale);
-  const info = getHost()
+  const { locale } = await props.params;
+  const intl = await getIntl(locale);
+  const info = await getHost()
 
   return {
     title: `${info.name}: ${intl.formatMessage({ id: "title" })}`,
@@ -49,16 +50,17 @@ export async function generateMetadata(
 }
 
 
-export default function RootLayout({params, children}: LayoutProps) {
-  const { locale } = params;
+export default async function RootLayout({params, children}: LayoutProps) {
+  const { locale } = await params;
   const dir = getDirection(locale);
-  const messages = useMessages();
 
   return (
-    <html lang={locale} dir={dir}>
-      <NextIntlClientProvider locale={locale} messages={messages}>
-        <body className={ChicaGogoFont.className}>{children}</body>
-      </NextIntlClientProvider>
-    </html>
+    <LayoutClient
+      locale={locale}
+      dir={dir}
+      fontClassName={ChicaGogoFont.className}
+    >
+      {children}
+    </LayoutClient>
   )
 }
