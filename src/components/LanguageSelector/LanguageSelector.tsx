@@ -31,7 +31,6 @@ export function LanguageSelector() {
                             key={code}
                             href={pathname}
                             locale={code}
-                            onClick={() => setOpen(false)}
                             className={`block px-4 py-2 text-sm hover:bg-secondary hover:bg-opacity-10 transition-colors ${
                                 currentLocale === code ? 'text-secondary font-semibold' : ''
                             }`}
