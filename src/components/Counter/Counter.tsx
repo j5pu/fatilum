@@ -6,7 +6,6 @@ import {useTranslations} from "next-intl";
 
 export function Counter() {
     const t = useTranslations('Home.Counter');
-    const counterRefs = useRef<(HTMLDivElement | null)[]>([]);
     const [isMounted, setIsMounted] = useState(false);
 
     useEffect(() => {
@@ -38,14 +37,11 @@ export function Counter() {
         <MotionTransition className="max-w-5xl py-10 mx-auto md:py-64">
         {/*<MotionTransition className="max-w-5xl p-6 mx-auto  mt-5 md:-mt-5">*/}
             <div className="justify-between md:flex">
-                {dataCounter.map(({ id, startNumber, endNumber, text }, index) => (
+                {dataCounter.map(({ id, startNumber, endNumber, text }) => (
                     <div key={id} className="py-5 text-2xl text-center md:text-left">
                         +
                         {isMounted && (
                             <CountUp 
-                                ref={(el) => {
-                                    if (el) counterRefs.current[index] = el as any;
-                                }}
                                 start={startNumber} 
                                 end={endNumber} 
                                 duration={1.5} 
