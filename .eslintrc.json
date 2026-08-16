@@ -1,16 +1,11 @@
 {
   "extends": "next/core-web-vitals",
+  "ignorePatterns": ["messages/**/*.json"],
   "overrides": [
     {
       "files": ["**/*.test.tsx", "**/*.test.ts"],
       "rules": {
         "@next/next/no-img-element": "off"
-      }
-    },
-    {
-      "files": ["**/*.json"],
-      "rules": {
-        "max-len": "off"
       }
     }
   ]
