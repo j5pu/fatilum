@@ -5,6 +5,7 @@ import React from "react";
 import { getDirection, getIntl } from "@/lib/intl";
 import { getHost } from "@/lib/host";
 import LayoutClient from "./layout-client";
+import { getMessages } from 'next-intl/server';
 
 type LayoutProps = {
   params: Promise<{ locale: string }>;
@@ -53,12 +54,14 @@ export async function generateMetadata(
 export default async function RootLayout({params, children}: LayoutProps) {
   const { locale } = await params;
   const dir = getDirection(locale);
+  const messages = await getMessages();
 
   return (
     <LayoutClient
       locale={locale}
       dir={dir}
       fontClassName={ChicaGogoFont.className}
+      messages={messages}
     >
       {children}
     </LayoutClient>
