@@ -1,10 +1,16 @@
 "use client"
+import { useRef, useEffect, useState } from "react";
 import CountUp from "react-countup";
 import { MotionTransition } from "../MotionTransition";
 import {useTranslations} from "next-intl";
 
 export function Counter() {
     const t = useTranslations('Home.Counter');
+    const [isMounted, setIsMounted] = useState(false);
+
+    useEffect(() => {
+        setIsMounted(true);
+    }, []);
 
     const dataCounter = [
       {
@@ -34,7 +40,13 @@ export function Counter() {
                 {dataCounter.map(({ id, startNumber, endNumber, text }) => (
                     <div key={id} className="py-5 text-2xl text-center md:text-left">
                         +
-                        <CountUp start={startNumber} end={endNumber} duration={1.5} enableScrollSpy />
+                        {isMounted && (
+                            <CountUp 
+                                start={startNumber} 
+                                end={endNumber} 
+                                duration={1.5} 
+                            />
+                        )}
                         {" "}
                         <span className="degradedBlue bg-blueLight">{text}</span>
                     </div>
