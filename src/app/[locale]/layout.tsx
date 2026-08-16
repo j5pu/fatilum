@@ -2,9 +2,11 @@ import './globals.css'
 import { Metadata } from "next";
 import localFont from 'next/font/local'
 import React from "react";
+import Script from 'next/script';
 import { getDirection, getIntl } from "@/lib/intl";
 import { getHost } from "@/lib/host";
 import LayoutClient from "./layout-client";
+import { getEnhancedMetadata, getJsonLd } from "./layout-metadata";
 import en from '@/messages/en.json';
 import es from '@/messages/es.json';
 
@@ -42,20 +44,7 @@ export async function generateMetadata(
   const intl = await getIntl(locale);
   const info = await getHost()
 
-  return {
-    title: `${info.name}: ${intl.formatMessage({ id: "title" })}`,
-    description: intl.formatMessage({
-      id: "description",
-    }),
-    alternates: {
-      canonical: info.url,
-      languages: {
-        en: info.url,
-        es: info.url + "/es",
-        "x-default": info.url,
-      },
-    },
-  };
+  return getEnhancedMetadata(locale, info, intl);
 }
 
 
@@ -63,6 +52,9 @@ export default async function RootLayout({params, children}: LayoutProps) {
   const { locale } = await params;
   const dir = getDirection(locale);
   const messages = messagesByLocale[(locale as Locale) || 'en'];
+  const info = await getHost();
+  const intl = await getIntl(locale);
+  const jsonLd = getJsonLd(locale, info, intl);
 
   return (
     <LayoutClient
@@ -71,6 +63,12 @@ export default async function RootLayout({params, children}: LayoutProps) {
       fontClassName={ChicaGogoFont.className}
       messages={messages}
     >
+      <Script
+        id="organization-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        strategy="afterInteractive"
+      />
       {children}
     </LayoutClient>
   )
