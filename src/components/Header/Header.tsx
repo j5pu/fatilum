@@ -1,16 +1,19 @@
 "use client"
 
 import Image from "next/image"
-import Link from "next/link"
 import { RiMenu3Line } from 'react-icons/ri'
 import { useState } from "react"
 import { MotionTransition } from "../MotionTransition/"
 import { HostProps } from "@/lib/host";
-import {useTranslations} from "next-intl";
+import {useTranslations, useLocale} from "next-intl";
+import { Link, usePathname } from "@/navigation";
 
-export function Header({ icon, info, locale }: { icon: string, info: HostProps, locale: string }) {
+export function Header({ icon, info }: { icon: string, info: HostProps, locale?: string }) {
     const [openMobileMenu, setOpenMobileMenu] = useState(false)
     const t = useTranslations('Home.Header.CallToAction');
+    const currentLocale = useLocale();
+    const pathname = usePathname();
+    
     const About = t("About")
     const Companies = t("Companies")
 
@@ -32,8 +35,9 @@ export function Header({ icon, info, locale }: { icon: string, info: HostProps, 
         },
         {
             id: 4,
-            name: locale === "en" ? "Español" : "English",
-            idLink: locale === "en" ? "es" : "en"
+            name: currentLocale === "en" ? "Español" : "English",
+            idLink: currentLocale === "en" ? pathname : pathname,
+            locale: currentLocale === "en" ? "es" : "en"
         }
     ];
 
@@ -47,9 +51,13 @@ export function Header({ icon, info, locale }: { icon: string, info: HostProps, 
                              onClick={() => setOpenMobileMenu(!openMobileMenu)} />
                 <div className={`${openMobileMenu ? 'block' : 'hidden'} w-full md:block md:w-auto`}>
                     <div className="flex flex-col p-4 mt-4 md:p-0 md:flex-row md:space-x-8 md:mt-0 md:border-0">
-                        {dataCabecera.map(({ id, name, idLink }) => (
+                        {dataCabecera.map(({ id, name, idLink, locale: linkLocale }) => (
                             <div key={id} className="px-4 transition-all duration-500 ease-in-out">
-                                <Link href={idLink} className="text-lg hover:text-secondary">{name}</Link>
+                                {linkLocale ? (
+                                    <Link href={idLink} locale={linkLocale} className="text-lg hover:text-secondary">{name}</Link>
+                                ) : (
+                                    <Link href={idLink} className="text-lg hover:text-secondary">{name}</Link>
+                                )}
                             </div>
                         ))}
                     </div>
