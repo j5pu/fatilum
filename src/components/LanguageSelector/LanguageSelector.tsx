@@ -15,6 +15,11 @@ export function LanguageSelector() {
         { code: 'es', label: 'ES - Español' },
     ]
 
+    const linkClassName = (code: string) =>
+        `block px-4 py-2 text-sm hover:bg-secondary hover:bg-opacity-10 transition-colors ${
+            currentLocale === code ? 'text-secondary font-semibold' : ''
+        }`
+
     return (
         <div className="relative">
             <button
@@ -31,9 +36,7 @@ export function LanguageSelector() {
                             key={code}
                             href={pathname}
                             locale={code}
-                            className={`block px-4 py-2 text-sm hover:bg-secondary hover:bg-opacity-10 transition-colors ${
-                                currentLocale === code ? 'text-secondary font-semibold' : ''
-                            }`}
+                            className={linkClassName(code)}
                         >
                             {label}
                         </Link>
