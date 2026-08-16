@@ -34,19 +34,19 @@ export function About() {
                                 <span className="block degradedBlue bg-blueLight">
                                     {restWords}
                                 </span>
-
-                        </h1>
+                            </h1>
                         </Reveal>
                         <Reveal>
-                        <p className="max-w-md mt-10">{a("Description")}</p>
-                    </Reveal>
-                    <Reveal>
-                        <div className="my-8">
-                            <button onClick={onClick} className="px-4 py-3 rounded-md bg-blueRadial">{
-                                Companies}
-                            </button>
-                        </div>
-                    </Reveal>
+                            <p className="max-w-md mt-10">{a("Description")}</p>
+                        </Reveal>
+                        <Reveal>
+                            <div className="my-8">
+                                <button onClick={onClick} className="px-4 py-3 rounded-md bg-blueRadial">{
+                                    Companies}
+                                </button>
+                            </div>
+                        </Reveal>
+                    </div>
                 </div>
                 <MotionTransition className="flex items-center justify-center mt-8">
                     <Image src="/assets/Handshake.svg" alt="Card" width={300} height={300}
