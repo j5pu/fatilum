@@ -1,6 +1,5 @@
 import { useTranslations } from 'next-intl';
 import { Metadata } from 'next';
-import { getIntl } from '@/lib/intl';
 
 export async function generateMetadata({
   params,
@@ -8,11 +7,20 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const intl = await getIntl(locale);
+
+  const titles = {
+    en: 'Privacy Policy',
+    es: 'Política de Privacidad'
+  } as const;
+
+  const descriptions = {
+    en: 'Privacy Policy for fatilum OÜ',
+    es: 'Política de Privacidad para fatilum OÜ'
+  } as const;
 
   return {
-    title: intl.formatMessage({ id: 'Privacy.title' }),
-    description: intl.formatMessage({ id: 'Privacy.description' }),
+    title: titles[locale as keyof typeof titles] || 'Privacy Policy',
+    description: descriptions[locale as keyof typeof descriptions] || 'Privacy Policy for fatilum OÜ',
   };
 }
 
@@ -20,7 +28,7 @@ export default function PrivacyPolicy() {
   const t = useTranslations('Privacy');
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-900 to-slate-800 py-16 px-4 md:px-8 text-white">
+    <div className="min-h-screen py-16 px-4 md:px-8 text-white">
       <div className="max-w-3xl mx-auto">
         <h1 className="text-4xl font-bold mb-8 text-white">{t('title')}</h1>
 
@@ -63,7 +71,6 @@ export default function PrivacyPolicy() {
               <p>{t('sections.contact.registry')}: 14249878</p>
               <p>{t('sections.contact.vat')}: EE102888722</p>
               <p>{t('sections.contact.address')}: Ahtri tn 12, Tallinn, Estonia</p>
-              <p>{t('sections.contact.email')}: <a href="mailto:jose@mnopi.com" className="text-blue-400 hover:text-blue-300">jose@mnopi.com</a></p>
             </div>
           </section>
         </div>

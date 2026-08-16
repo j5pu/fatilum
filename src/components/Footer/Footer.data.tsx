@@ -12,6 +12,6 @@ export const footerSocialNetworks = [
   {
     id: 2,
     icon: <RiLinkedinBoxFill />,
-    link: "https://www.linkedin.com/in/puertolas/"
+    link: "https://linkedin.com/company/fatilum"
   },
 ];
