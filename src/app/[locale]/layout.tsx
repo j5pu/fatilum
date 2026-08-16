@@ -42,6 +42,7 @@ export default async function RootLayout({params, children}: LayoutProps) {
   return (
     <html lang={locale} dir={dir} suppressHydrationWarning>
       <head>
+        <title>{info.name}</title>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

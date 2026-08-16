@@ -66,7 +66,7 @@ export function Footer({ icon, info }: { icon: string, info: HostProps }) {
                 </div>
 
             </div>
-            <ContactForm isOpen={contactFormOpen} onClose={() => setContactFormOpen(false)} />
+            <ContactForm isOpen={contactFormOpen} onCloseAction={() => setContactFormOpen(false)} />
         </>
     )
 } 

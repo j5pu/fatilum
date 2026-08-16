@@ -1,5 +1,5 @@
 "use client"
-import { useRef, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import CountUp from "react-countup";
 import { MotionTransition } from "../MotionTransition";
 import {useTranslations} from "next-intl";

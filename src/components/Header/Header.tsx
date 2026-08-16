@@ -62,9 +62,20 @@ export function Header({ icon, info }: { icon: string, info: HostProps, locale?:
                                             {name}
                                         </button>
                                     ) : linkLocale ? (
-                                        <Link href={idLink || ''} locale={linkLocale} className="text-lg hover:text-secondary">{name}</Link>
+                                        <Link
+                                            href={idLink || ''}
+                                            locale={linkLocale}
+                                            className="text-lg hover:text-secondary"
+                                        >
+                                            {name}
+                                        </Link>
                                     ) : (
-                                        <Link href={idLink || ''} className="text-lg hover:text-secondary">{name}</Link>
+                                        <Link
+                                            href={idLink || ''}
+                                            className="text-lg hover:text-secondary"
+                                        >
+                                            {name}
+                                        </Link>
                                     )}
                                 </div>
                             ))}
@@ -72,7 +83,7 @@ export function Header({ icon, info }: { icon: string, info: HostProps, locale?:
                     </div>
                 </nav>
             </MotionTransition>
-            <ContactForm isOpen={contactFormOpen} onClose={() => setContactFormOpen(false)} />
+            <ContactForm isOpen={contactFormOpen} onCloseAction={() => setContactFormOpen(false)} />
         </>
     )
 }

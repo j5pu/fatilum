@@ -16,7 +16,7 @@ jest.mock('next-intl', () => ({
 // Mock react-countup
 jest.mock('react-countup', () => ({
   __esModule: true,
-  default: ({ start, end }: any) => <span>{end}</span>,
+  default: ({ end }: any) => <span>{end}</span>,
 }))
 
 // Mock MotionTransition
