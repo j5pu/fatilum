@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /api/
 
-Sitemap: https://mnopi.com/sitemap.xml
+Sitemap: https://fatilum.vercel.app/sitemap.xml
