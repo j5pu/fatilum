@@ -1,6 +1,5 @@
 import './globals.css'
 import { Metadata } from "next";
-import localFont from 'next/font/local'
 import React from "react";
 import { getDirection, getIntl } from "@/lib/intl";
 import { getHost } from "@/lib/host";
@@ -21,21 +20,6 @@ const messagesByLocale = {
 
 type Locale = keyof typeof messagesByLocale;
 
-const ChicaGogoFont = localFont({
-  src: [
-    {
-      path: '../../fonts/ChicaGogoNF-Regular.woff2',
-      weight: '400',
-      style: 'normal',
-    },
-    {
-      path: '../../fonts/ChicaGogoNF-Bold.woff2',
-      weight: '700',
-      style: 'normal',
-    },
-  ],
-})
-
 export async function generateMetadata(
   props: any,
 ): Promise<Metadata> {
@@ -55,7 +39,7 @@ export default async function RootLayout({params, children}: LayoutProps) {
   return (
     <html lang={locale} dir={dir} suppressHydrationWarning>
       <head />
-      <body className={ChicaGogoFont.className}>
+      <body>
         <LayoutClient
           locale={locale}
           messages={messages}
