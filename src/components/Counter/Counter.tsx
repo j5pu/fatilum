@@ -34,7 +34,7 @@ export function Counter() {
     ];
 
     return (
-        <MotionTransition className="max-w-5xl py-10 mx-auto md:py-64">
+        <MotionTransition className="max-w-5xl py-10 mx-auto md:py-20 mb-8">
         {/*<MotionTransition className="max-w-5xl p-6 mx-auto  mt-5 md:-mt-5">*/}
             <div className="justify-between md:flex">
                 {dataCounter.map(({ id, startNumber, endNumber, text }) => (

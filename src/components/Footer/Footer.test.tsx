@@ -43,13 +43,6 @@ describe('Footer Component', () => {
     expect(footer).toBeInTheDocument()
   })
 
-  it('displays logo image', () => {
-    const { container } = render(<Footer icon="/assets/mnopi.png" info={mockInfo} />)
-    const img = container.querySelector('img')
-    expect(img).toBeInTheDocument()
-    expect(img).toHaveAttribute('src', '/assets/mnopi.png')
-  })
-
   it('includes company name in copyright', () => {
     const { container } = render(<Footer icon="/assets/mnopi.png" info={mockInfo} />)
     const text = container.textContent

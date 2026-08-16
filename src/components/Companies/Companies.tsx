@@ -29,7 +29,7 @@ export function Companies()
     };
 
     return (
-        <div className="relative px-6 py-20 md:py-64" id="companies">
+        <div className="relative px-6 py-20 md:py-40" id="companies">
             <BackgroundRadialLeft />
             <div className="grid max-w-5xl mx-auto md:grid-cols-2">
                 <div>
