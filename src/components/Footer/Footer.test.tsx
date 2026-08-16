@@ -54,10 +54,10 @@ describe('Footer Component', () => {
     expect(img).toHaveAttribute('src', '/assets/mnopi.png')
   })
 
-  it('includes company name in copyright', () => {
+  it('includes fatilum OÜ in copyright', () => {
     const { container } = render(<Footer icon="/assets/mnopi.png" info={mockInfo} />)
     const text = container.textContent
-    expect(text).toContain('mnopi')
+    expect(text).toContain('fatilum OÜ')
   })
 
   it('includes rights reserved text', () => {
@@ -73,16 +73,9 @@ describe('Footer Component', () => {
     expect(text).toContain(currentYear)
   })
 
-  it('shows inc suffix for mnopi', () => {
-    const { container } = render(<Footer icon="/assets/mnopi.png" info={mockInfo} />)
+  it('shows fatilum OÜ for all hosts', () => {
+    const { container } = render(<Footer icon="/assets/other.png" info={{ ...mockInfo, name: 'other' }} />)
     const text = container.textContent
-    expect(text).toContain('inc.')
-  })
-
-  it('shows SRL suffix for other companies', () => {
-    const otherInfo = { ...mockInfo, name: 'other' }
-    const { container } = render(<Footer icon="/assets/other.png" info={otherInfo} />)
-    const text = container.textContent
-    expect(text).toContain('SRL.')
+    expect(text).toContain('fatilum OÜ')
   })
 })
