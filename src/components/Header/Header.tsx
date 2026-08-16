@@ -37,7 +37,7 @@ export function Header({ icon, info }: { icon: string, info: HostProps, locale?:
     return (
         <>
             <MotionTransition>
-                <nav className="flex flex-wrap items-center justify-between max-w-5xl p-4 mx-auto md:py-8">
+               <nav className="flex flex-wrap items-center justify-between max-w-5xl p-4 mx-auto md:py-8">
                     <Link href="/" className="flex items-center">
                         <Image src={icon} width="150" height="40" alt={info.name + " logo"} />
                     </Link>
