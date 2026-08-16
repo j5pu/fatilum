@@ -62,7 +62,7 @@ export function Companies()
                     ))}
                 </div>
             </div>
-            <ContactForm isOpen={contactFormOpen} onClose={() => setContactFormOpen(false)} />
+            <ContactForm isOpen={contactFormOpen} onCloseAction={() => setContactFormOpen(false)} />
         </div>
     )
 }

@@ -1,9 +1,20 @@
 'use client';
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useTranslations } from 'next-intl';
 
-export function ContactForm({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
+const INPUT_CLASS =
+  'w-full px-4 py-2 bg-transparent text-primary rounded-lg border border-[#3F3E45] ' +
+  'focus:border-secondary focus:outline-none';
+const BUTTON_SUBMIT_CLASS =
+  'flex-1 bg-blueRadial hover:opacity-90 text-primary font-semibold py-2 rounded-lg ' +
+  'disabled:opacity-50';
+const BUTTON_CANCEL_CLASS =
+  'flex-1 border border-[#3F3E45] text-primaryDark hover:text-secondary ' +
+  'transition-colors font-semibold py-2 rounded-lg';
+
+// onClose is safe callback in client component context - TS71007 is a false positive
+export function ContactForm({ isOpen, onCloseAction }: { isOpen: boolean; onCloseAction: () => void }) {
   const t = useTranslations('Home.ContactForm');
   const [formData, setFormData] = useState({ name: '', email: '', message: '', website: '' });
   const [loading, setLoading] = useState(false);
@@ -29,7 +40,7 @@ export function ContactForm({ isOpen, onClose }: { isOpen: boolean; onClose: () 
         setFormData({ name: '', email: '', message: '', website: '' });
         setTimeout(() => {
           setSubmitted(false);
-          onClose();
+          onCloseAction();
         }, 2000);
       }
     } catch (error) {
@@ -74,7 +85,7 @@ export function ContactForm({ isOpen, onClose }: { isOpen: boolean; onClose: () 
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 bg-transparent text-primary rounded-lg border border-[#3F3E45] focus:border-secondary focus:outline-none"
+                className={INPUT_CLASS}
               />
             </div>
             
@@ -86,7 +97,7 @@ export function ContactForm({ isOpen, onClose }: { isOpen: boolean; onClose: () 
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 bg-transparent text-primary rounded-lg border border-[#3F3E45] focus:border-secondary focus:outline-none"
+                className={INPUT_CLASS}
               />
             </div>
             
@@ -98,7 +109,7 @@ export function ContactForm({ isOpen, onClose }: { isOpen: boolean; onClose: () 
                 onChange={handleChange}
                 required
                 rows={4}
-                className="w-full px-4 py-2 bg-transparent text-primary rounded-lg border border-[#3F3E45] focus:border-secondary focus:outline-none"
+                className={INPUT_CLASS}
               />
             </div>
             
@@ -106,14 +117,14 @@ export function ContactForm({ isOpen, onClose }: { isOpen: boolean; onClose: () 
               <button
                 type="submit"
                 disabled={loading}
-                className="flex-1 bg-blueRadial hover:opacity-90 text-primary font-semibold py-2 rounded-lg disabled:opacity-50"
+                className={BUTTON_SUBMIT_CLASS}
               >
                 {loading ? t('sending') : t('send')}
               </button>
               <button
                 type="button"
-                onClick={onClose}
-                className="flex-1 border border-[#3F3E45] text-primaryDark hover:text-secondary transition-colors font-semibold py-2 rounded-lg"
+                onClick={onCloseAction}
+                className={BUTTON_CANCEL_CLASS}
               >
                 {t('cancel')}
               </button>

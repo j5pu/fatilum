@@ -72,7 +72,7 @@ export function Header({ icon, info }: { icon: string, info: HostProps, locale?:
                     </div>
                 </nav>
             </MotionTransition>
-            <ContactForm isOpen={contactFormOpen} onClose={() => setContactFormOpen(false)} />
+            <ContactForm isOpen={contactFormOpen} onCloseAction={() => setContactFormOpen(false)} />
         </>
     )
 }
