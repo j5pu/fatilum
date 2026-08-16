@@ -5,12 +5,20 @@ import React from "react";
 import { getDirection, getIntl } from "@/lib/intl";
 import { getHost } from "@/lib/host";
 import LayoutClient from "./layout-client";
-import { getMessages } from 'next-intl/server';
+import en from '@/messages/en.json';
+import es from '@/messages/es.json';
 
 type LayoutProps = {
   params: Promise<{ locale: string }>;
   children: React.ReactNode;
 };
+
+const messagesByLocale = {
+  en,
+  es,
+} as const;
+
+type Locale = keyof typeof messagesByLocale;
 
 const ChicaGogoFont = localFont({
   src: [
@@ -54,10 +62,7 @@ export async function generateMetadata(
 export default async function RootLayout({params, children}: LayoutProps) {
   const { locale } = await params;
   const dir = getDirection(locale);
-  const allMessages = await getMessages();
-  
-  // NextIntlClientProvider expects messages for the current locale only
-  const messages = allMessages as Record<string, any>;
+  const messages = messagesByLocale[(locale as Locale) || 'en'];
 
   return (
     <LayoutClient
