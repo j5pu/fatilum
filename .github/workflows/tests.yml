@@ -73,12 +73,12 @@ jobs:
           echo $! > /tmp/server.pid
         env:
           NODE_ENV: development
-          PORT: 3001
+          PORT: 3000
       
       - name: Wait for server to start
         run: |
           for i in {1..60}; do
-            if curl -s http://localhost:3001/en > /dev/null 2>&1; then
+            if curl -s http://localhost:3000/en > /dev/null 2>&1; then
               echo "✓ Server ready"
               exit 0
             fi
