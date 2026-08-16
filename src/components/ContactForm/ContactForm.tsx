@@ -60,7 +60,7 @@ export function ContactForm({ isOpen, onClose }: { isOpen: boolean; onClose: () 
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 bg-slate-800 text-white rounded border border-gray-600 focus:border-blue-400 focus:outline-none"
+                className="w-full px-4 py-2 bg-slate-800 text-white rounded border border-gray-600 focus:border-secondary focus:outline-none"
               />
             </div>
             
@@ -72,7 +72,7 @@ export function ContactForm({ isOpen, onClose }: { isOpen: boolean; onClose: () 
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 bg-slate-800 text-white rounded border border-gray-600 focus:border-blue-400 focus:outline-none"
+                className="w-full px-4 py-2 bg-slate-800 text-white rounded border border-gray-600 focus:border-secondary focus:outline-none"
               />
             </div>
             
@@ -84,7 +84,7 @@ export function ContactForm({ isOpen, onClose }: { isOpen: boolean; onClose: () 
                 onChange={handleChange}
                 required
                 rows={4}
-                className="w-full px-4 py-2 bg-slate-800 text-white rounded border border-gray-600 focus:border-blue-400 focus:outline-none"
+                className="w-full px-4 py-2 bg-slate-800 text-white rounded border border-gray-600 focus:border-secondary focus:outline-none"
               />
             </div>
             
@@ -92,7 +92,7 @@ export function ContactForm({ isOpen, onClose }: { isOpen: boolean; onClose: () 
               <button
                 type="submit"
                 disabled={loading}
-                className="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded disabled:opacity-50"
+                className="flex-1 bg-blueRadial hover:opacity-90 text-white font-semibold py-2 rounded disabled:opacity-50"
               >
                 {loading ? t('sending') : t('send')}
               </button>

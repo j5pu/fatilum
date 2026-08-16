@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
 
 export async function POST(request: NextRequest) {
   try {
@@ -12,7 +11,17 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Create transporter using environment variables
+    // For development, just log the message
+    if (process.env.NODE_ENV === 'development') {
+      console.log('Contact form submission:', { name, email, message });
+      return NextResponse.json(
+        { success: true, message: 'Message logged (dev mode)' },
+        { status: 200 }
+      );
+    }
+
+    // For production, send email via configured SMTP
+    const nodemailer = require('nodemailer');
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
       port: parseInt(process.env.SMTP_PORT || '587'),
@@ -21,9 +30,11 @@ export async function POST(request: NextRequest) {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASSWORD,
       } : undefined,
+      connectionTimeout: 10000,
+      greetingTimeout: 10000,
+      socketTimeout: 10000,
     });
 
-    // Send email
     await transporter.sendMail({
       from: process.env.SMTP_FROM || 'noreply@fatilum.com',
       to: process.env.CONTACT_EMAIL || 'jose@mnopi.com',
@@ -45,7 +56,7 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error('Contact form error:', error);
     return NextResponse.json(
-      { error: 'Failed to send email' },
+      { error: 'Failed to process form' },
       { status: 500 }
     );
   }

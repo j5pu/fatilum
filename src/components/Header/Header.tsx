@@ -15,20 +15,17 @@ export function Header({ icon, info }: { icon: string, info: HostProps, locale?:
     const t = useTranslations('Home.Header.CallToAction');
     const currentLocale = useLocale();
     const pathname = usePathname();
-    
-    const About = t("About")
-    const Companies = t("Companies")
 
     const dataCabecera = [
         {
             id: 1,
-            name: About,
-            idLink: "#" + About.toLowerCase(),
+            name: t("About"),
+            idLink: "#about",
         },
         {
             id: 2,
-            name: Companies,
-            idLink: "#" + Companies.toLowerCase(),
+            name: t("Companies"),
+            idLink: "#companies",
         },
         {
             id: 3,
@@ -39,7 +36,7 @@ export function Header({ icon, info }: { icon: string, info: HostProps, locale?:
         {
             id: 4,
             name: currentLocale === "en" ? "Español" : "English",
-            idLink: currentLocale === "en" ? pathname : pathname,
+            idLink: pathname,
             locale: currentLocale === "en" ? "es" : "en"
         }
     ];
