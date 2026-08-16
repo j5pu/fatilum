@@ -54,6 +54,17 @@ describe('Header Component', () => {
     expect(screen.getByText('Contact')).toBeInTheDocument()
   })
 
+  it('navigation links point to correct anchors', () => {
+    render(<Header icon="/assets/mnopi.png" info={mockInfo} />)
+    
+    const aboutLink = screen.getByText('About').closest('a')
+    const companiesLink = screen.getByText('Companies').closest('a')
+    
+    // Verify links use hardcoded English IDs (work in all languages)
+    expect(aboutLink).toHaveAttribute('href', '#about')
+    expect(companiesLink).toHaveAttribute('href', '#companies')
+  })
+
   it('opens contact form modal when Contact button clicked', () => {
     render(<Header icon="/assets/mnopi.png" info={mockInfo} />)
 
