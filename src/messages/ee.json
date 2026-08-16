@@ -33,7 +33,7 @@
         "Counter": {
             "1": "riigid",
             "2": "ettevõtted",
-            "3": "miljon $"
+            "3": "miljon"
         },
         "ContactForm": {
             "title": "Võtke meiega ühendust",
@@ -44,6 +44,10 @@
             "sending": "Saatmine...",
             "cancel": "Tühista",
             "success": "Sõnum saadetud edukalt!"
+        },
+        "Footer": {
+            "PrivacyPolicy": "Privaatsuseeskirjad",
+            "LegalNotice": "Juriidiline teatis"
         }
     },
     "Privacy": {

@@ -33,7 +33,7 @@
         "Counter": {
             "1": "países",
             "2": "empresas",
-            "3": "milhão $"
+            "3": "milhão"
         },
         "ContactForm": {
             "title": "Entre em contato",
@@ -44,6 +44,10 @@
             "sending": "Enviando...",
             "cancel": "Cancelar",
             "success": "Mensagem enviada com sucesso!"
+        },
+        "Footer": {
+            "PrivacyPolicy": "Política de Privacidade",
+            "LegalNotice": "Aviso Legal"
         }
     },
     "Privacy": {

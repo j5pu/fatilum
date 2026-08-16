@@ -4,7 +4,7 @@ import {Reveal} from "../Reveal";
 import {footerSocialNetworks} from "./Footer.data";
 import Link from "next/link";
 import { useState } from 'react';
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { ContactForm } from "../ContactForm/ContactForm";
 import { HostProps } from "@/lib/host";
 
@@ -12,6 +12,7 @@ import { HostProps } from "@/lib/host";
 export function Footer({ icon, info }: { icon: string, info: HostProps }) {
     const [contactFormOpen, setContactFormOpen] = useState(false);
     const locale = useLocale();
+    const t = useTranslations('Home');
     const date = new Date();
     const year = date.getFullYear();
     const rights = `© ${year} fatilum OÜ`
@@ -30,10 +31,10 @@ export function Footer({ icon, info }: { icon: string, info: HostProps }) {
 
                     <div className="flex gap-6 text-sm text-white">
                         <Link href={`/${locale}/privacy`} className="hover:text-gray-300 transition-colors">
-                            Privacy Policy
+                            {t.raw('Footer.PrivacyPolicy')}
                         </Link>
                         <Link href={`/${locale}/legal`} className="hover:text-gray-300 transition-colors">
-                            Legal Notice
+                            {t.raw('Footer.LegalNotice')}
                         </Link>
                     </div>
 

@@ -44,6 +44,10 @@
             "sending": "Sending...",
             "cancel": "Cancel",
             "success": "Message sent successfully!"
+        },
+        "Footer": {
+            "PrivacyPolicy": "Privacy Policy",
+            "LegalNotice": "Legal Notice"
         }
     },
     "Privacy": {
