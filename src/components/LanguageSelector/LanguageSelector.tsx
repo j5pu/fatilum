@@ -13,6 +13,11 @@ export function LanguageSelector() {
     const languages = [
         { code: 'en', label: 'EN - English' },
         { code: 'es', label: 'ES - Español' },
+        { code: 'ee', label: 'EE - Eesti' },
+        { code: 'pt', label: 'PT - Português' },
+        { code: 'it', label: 'IT - Italiano' },
+        { code: 'fr', label: 'FR - Français' },
+        { code: 'de', label: 'DE - Deutsch' },
     ]
 
     const linkClassName = (code: string) =>

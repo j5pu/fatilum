@@ -1,0 +1,123 @@
+{
+    "title": "M&A nõu ettevõtetele",
+    "description": "Läbipaistvus ja innovatsioon M&As, et aidata KMO-de kasvu, anddes selgema ülevaate operatsiooni potentsiaalist ja tulevikust. Juurdepääs tehnoloogiaettevõtete ja Private Equity ostmisele.",
+    "Home": {
+        "Header": {
+            "CallToAction": {
+                "About": "Meist",
+                "Companies": "Ettevõtted",
+                "Contact": "Kontakt"
+            }
+        },
+        "About": {
+            "Title": "M&A nõu ettevõtetele",
+            "Description": "Läbipaistvus ja innovatsioon M&As, et aidata KMO-de kasvu, anddes selgema ülevaate operatsiooni potentsiaalist ja tulevikust. Juurdepääs tehnoloogiaettevõtete ja Private Equity ostmisele."
+        },
+        "Companies": {
+            "Title": "Saatavad ettevõtteid:",
+            "Data": {
+                "rewards": {
+                    "Title": "B2B",
+                    "Description": "B2B vertikaalsed spetsialiseeritud turgudel, valdkonna teadmusega hõlmatud tiim."
+                },
+                "safe": {
+                    "Title": "Korduv",
+                    "Description": "Potentsiaal korduvale, skaaleeritavale ärimudelile ja globaalsele jõudelele."
+                },
+                "send": {
+                    "Title": "Generaatorid",
+                    "Description": "Mõju, rahavood ja tõkked sissenemisele."
+                }
+            }
+        },
+        "Counter": {
+            "1": "riigid",
+            "2": "ettevõtted",
+            "3": "miljon $"
+        },
+        "ContactForm": {
+            "title": "Võtke meiega ühendust",
+            "name": "Nimi",
+            "email": "E-post",
+            "message": "Sõnum",
+            "send": "Saada",
+            "sending": "Saatmine...",
+            "cancel": "Tühista",
+            "success": "Sõnum saadetud edukalt!"
+        }
+    },
+    "Privacy": {
+        "title": "Privaatsuseeskirjad",
+        "description": "Privaatsuspoliitika fatilum OÜ jaoks",
+        "sections": {
+            "introduction": {
+                "title": "Sissejuhatus",
+                "content": "fatilum OÜ juures oleme pühendunud teie privaatsuse kaitsele ja positiivse kasutajakogemuse tagamisele. See privaatsuspoliitika selgitab, kuidas me teie teavet kogume, kasutame, avaldame ja kaitseüksusi."
+            },
+            "dataCollection": {
+                "title": "Andmete kogumine",
+                "content": "Kogume teavet, mille te otse meile esitate, näiteks kui võtate meiega ühendust või taotlete meie teenuseid.",
+                "items": [
+                    "Kontaktandmed (nimi, e-post, telefoninumber)",
+                    "Ettevõtte andmed (ettevõtte nimi, tegevusala, suurus)",
+                    "Suhtluse eelistused"
+                ]
+            },
+            "cookies": {
+                "title": "Küpsised",
+                "content": "Me ei kasuta küpsiseid ega jälitamistehnoloogiaid meie veebisaidil. Teie brauserimise kogemust ei jälgita."
+            },
+            "userRights": {
+                "title": "Teie õigused",
+                "content": "GDPR ja muude privaatsusseaduste alusel on teile järgmised õigused:",
+                "items": [
+                    "Õigus juurdepääsuks oma isikuandmetele",
+                    "Õigus ebaõigete andmete parandamisele",
+                    "Õigus taotleda oma andmete kustutamist",
+                    "Õigus vastuseisule töötlemisele"
+                ]
+            },
+            "contact": {
+                "title": "Kontaktandmed",
+                "registry": "Registri kood",
+                "vat": "KM",
+                "address": "Aadress",
+                "email": "E-post"
+            }
+        },
+        "lastUpdated": "Viimati värskendatud: august 2026"
+    },
+    "Legal": {
+        "title": "Juriidiline teatis",
+        "description": "Juriidiline teatis fatilum OÜ jaoks",
+        "sections": {
+            "company": {
+                "title": "Ettevõtte andmed",
+                "registry": "Registri kood",
+                "vat": "KM",
+                "address": "Aadress"
+            },
+            "dataProtection": {
+                "title": "Andmete kaitse",
+                "content": "Oleme kooskõlas GDPR ja Eesti andmekaitseseadusega. Isikuandmeid töödeldakse kohaldatavate seaduste kohaselt ja need on kaitstud asjakohasete turvameetmetega."
+            },
+            "intellectualProperty": {
+                "title": "Intellektuaalomand",
+                "content": "Kõik selle veebisaidi sisu, sealhulgas tekst, graafika, logod ja pildid, kuulub fatilum OÜ-le või selle sisupakkujatele ja on kaitstud rahvusvaheliste autoriõiguste seadustega."
+            },
+            "liability": {
+                "title": "Vastutuse piirang",
+                "content": "Selle veebisaidi teave on ainult teavitamise eesmärgil ja ei moodusta juriidilisi ega finantsialaseid nõuandeid. fatilum OÜ ei ole vastutav kahjude eest, mis on tekkinud selle veebisaidi kasutamisest või mittekasutamisest."
+            },
+            "governing": {
+                "title": "Kohaldatav seadus",
+                "content": "Need tingimused järgivad Eesti seadusi ja neid tõlgendatakse nende kohaselt."
+            },
+            "contact": {
+                "title": "Võtke meiega ühendust",
+                "text": "Kui teil on juriidilisi küsimusi, võtke meiega ühendust aadressil:"
+            }
+        },
+        "lastUpdated": "Viimati värskendatud: august 2026"
+    }
+}

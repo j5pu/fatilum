@@ -27,8 +27,12 @@ describe('Language Detector', () => {
       expect(detectPreferredLanguage(null)).toBe('en');
     });
 
-    it('returns default locale when no matching language', () => {
-      expect(detectPreferredLanguage('fr,de;q=0.9')).toBe('en');
+    it('returns default locale when no matching language from supported ones', () => {
+      expect(detectPreferredLanguage('ja,zh;q=0.9')).toBe('en');
+    });
+
+    it('prefers French when browser prefers French', () => {
+      expect(detectPreferredLanguage('fr,de;q=0.9')).toBe('fr');
     });
 
     it('prefers Spanish when browser prefers Spanish', () => {

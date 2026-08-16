@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://fatilum.vercel.app';
-  const locales = ['en', 'es'];
+  const locales = ['en', 'es', 'ee', 'pt', 'it', 'fr', 'de'];
   
   const pages = [
     { path: '', priority: 1, changeFrequency: 'weekly' as const },

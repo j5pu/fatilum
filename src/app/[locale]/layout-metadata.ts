@@ -1,5 +1,25 @@
 import { Metadata } from 'next';
 
+const localeMap: Record<string, string> = {
+  'en': 'en-US',
+  'es': 'es-ES',
+  'ee': 'et-EE',
+  'pt': 'pt-PT',
+  'it': 'it-IT',
+  'fr': 'fr-FR',
+  'de': 'de-DE',
+};
+
+const localeNameMap: Record<string, string> = {
+  'en': 'en_US',
+  'es': 'es_ES',
+  'ee': 'et_EE',
+  'pt': 'pt_PT',
+  'it': 'it_IT',
+  'fr': 'fr_FR',
+  'de': 'de_DE',
+};
+
 export async function getEnhancedMetadata(
   locale: string,
   info: any,
@@ -7,26 +27,39 @@ export async function getEnhancedMetadata(
 ): Promise<Metadata> {
   const title = `${info.name}: ${intl.formatMessage({ id: 'title' })}`;
   const description = intl.formatMessage({ id: 'description' });
-  const url = locale === 'en' ? info.url : info.url + '/es';
+  const url = locale === 'en' ? info.url : info.url + '/' + locale;
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: info.name,
     description,
     url,
-    inLanguage: locale === 'es' ? 'es-ES' : 'en-US',
+    inLanguage: localeMap[locale] || 'en-US',
   };
+
+  // Build language alternates
+  const languages: Record<string, string> = {
+    en: info.url,
+    es: info.url + '/es',
+    ee: info.url + '/ee',
+    pt: info.url + '/pt',
+    it: info.url + '/it',
+    fr: info.url + '/fr',
+    de: info.url + '/de',
+    'x-default': info.url,
+  };
+
+  // Build alternate locales
+  const alternateLocales = Object.keys(localeNameMap)
+    .filter(l => l !== locale)
+    .map(l => localeNameMap[l]);
 
   return {
     title,
     description,
     alternates: {
       canonical: url,
-      languages: {
-        en: info.url,
-        es: info.url + '/es',
-        'x-default': info.url,
-      },
+      languages,
     },
     openGraph: {
       title,
@@ -34,8 +67,8 @@ export async function getEnhancedMetadata(
       url,
       type: 'website',
       siteName: info.name,
-      locale: locale === 'es' ? 'es_ES' : 'en_US',
-      alternateLocale: locale === 'es' ? 'en_US' : 'es_ES',
+      locale: localeNameMap[locale] || 'en_US',
+      alternateLocale: alternateLocales,
     },
     twitter: {
       card: 'summary_large_image',
@@ -60,6 +93,6 @@ export function getJsonLd(locale: string, info: any, intl: any) {
     name: info.name,
     description: intl.formatMessage({ id: 'description' }),
     url: info.url,
-    inLanguage: locale === 'es' ? 'es-ES' : 'en-US',
+    inLanguage: localeMap[locale] || 'en-US',
   };
 }

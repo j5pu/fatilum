@@ -1,0 +1,123 @@
+{
+    "title": "Conseil en M&A pour les entreprises",
+    "description": "Transparence et innovation en M&A, pour aider la croissance des PME, en donnant une meilleure clarté sur le potentiel et l'avenir de l'opération. Accès à l'achat de sociétés technologiques et de Private Equity.",
+    "Home": {
+        "Header": {
+            "CallToAction": {
+                "About": "À propos",
+                "Companies": "Entreprises",
+                "Contact": "Contact"
+            }
+        },
+        "About": {
+            "Title": "Conseil en M&A pour les entreprises",
+            "Description": "Transparence et innovation en M&A, pour aider la croissance des PME, en donnant une meilleure clarté sur le potentiel et l'avenir de l'opération. Accès à l'achat de sociétés technologiques et de Private Equity."
+        },
+        "Companies": {
+            "Title": "Accompagnent les entreprises:",
+            "Data": {
+                "rewards": {
+                    "Title": "B2B",
+                    "Description": "Verticales B2B sur des marchés spécialisés, avec une équipe impliquée ayant des connaissances sectorielles."
+                },
+                "safe": {
+                    "Title": "Récurrent",
+                    "Description": "Potentiel vers un modèle commercial récurrent, évolutif et à portée mondiale."
+                },
+                "send": {
+                    "Title": "Générateurs",
+                    "Description": "Impact, générateurs de trésorerie et obstacles à l'entrée."
+                }
+            }
+        },
+        "Counter": {
+            "1": "pays",
+            "2": "entreprises",
+            "3": "million $"
+        },
+        "ContactForm": {
+            "title": "Nous contacter",
+            "name": "Nom",
+            "email": "Email",
+            "message": "Message",
+            "send": "Envoyer",
+            "sending": "Envoi...",
+            "cancel": "Annuler",
+            "success": "Message envoyé avec succès!"
+        }
+    },
+    "Privacy": {
+        "title": "Politique de Confidentialité",
+        "description": "Politique de Confidentialité pour fatilum OÜ",
+        "sections": {
+            "introduction": {
+                "title": "Introduction",
+                "content": "Chez fatilum OÜ, nous nous engageons à protéger votre vie privée et à vous assurer une expérience positive sur notre site Web. Cette Politique de Confidentialité explique comment nous collectons, utilisons, divulguons et protégeons vos informations."
+            },
+            "dataCollection": {
+                "title": "Collecte de Données",
+                "content": "Nous collectons les informations que vous nous fournissez directement, par exemple lorsque vous nous contactez ou demandez nos services.",
+                "items": [
+                    "Informations de contact (nom, email, numéro de téléphone)",
+                    "Informations sur l'entreprise (nom de l'entreprise, secteur, taille)",
+                    "Préférences de communication"
+                ]
+            },
+            "cookies": {
+                "title": "Cookies",
+                "content": "Nous n'utilisons pas de cookies ou de technologies de suivi sur notre site Web. Votre expérience de navigation n'est pas suivie."
+            },
+            "userRights": {
+                "title": "Vos Droits",
+                "content": "Selon le RGPD et autres réglementations sur la confidentialité, vous avez les droits suivants:",
+                "items": [
+                    "Droit d'accès à vos données personnelles",
+                    "Droit de corriger les données inexactes",
+                    "Droit de demander la suppression de vos données",
+                    "Droit de vous opposer au traitement"
+                ]
+            },
+            "contact": {
+                "title": "Informations de Contact",
+                "registry": "Code d'Enregistrement",
+                "vat": "TVA",
+                "address": "Adresse",
+                "email": "Email"
+            }
+        },
+        "lastUpdated": "Dernière mise à jour: août 2026"
+    },
+    "Legal": {
+        "title": "Avis Juridique",
+        "description": "Avis Juridique pour fatilum OÜ",
+        "sections": {
+            "company": {
+                "title": "Informations de l'Entreprise",
+                "registry": "Code d'Enregistrement",
+                "vat": "TVA",
+                "address": "Adresse"
+            },
+            "dataProtection": {
+                "title": "Protection des Données",
+                "content": "Nous nous conformons au RGPD et aux réglementations estoniennes en matière de protection des données. Les données personnelles sont traitées conformément aux lois applicables et sont protégées par des mesures de sécurité appropriées."
+            },
+            "intellectualProperty": {
+                "title": "Propriété Intellectuelle",
+                "content": "Tout le contenu de ce site Web, y compris le texte, les graphiques, les logos et les images, est la propriété de fatilum OÜ ou de ses fournisseurs de contenu et est protégé par les lois internationales sur le droit d'auteur."
+            },
+            "liability": {
+                "title": "Limitation de Responsabilité",
+                "content": "Les informations fournies sur ce site Web sont uniquement à titre informatif et ne constituent pas un conseil juridique ou financier. fatilum OÜ n'est pas responsable de tout dommage résultant de l'utilisation ou de l'impossibilité d'utiliser ce site Web."
+            },
+            "governing": {
+                "title": "Loi Applicable",
+                "content": "Ces conditions générales sont régies par les lois de l'Estonie."
+            },
+            "contact": {
+                "title": "Nous Contacter",
+                "text": "Pour toute question juridique, veuillez nous contacter à:"
+            }
+        },
+        "lastUpdated": "Dernière mise à jour: août 2026"
+    }
+}
