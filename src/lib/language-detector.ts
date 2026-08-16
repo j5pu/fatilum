@@ -1,6 +1,7 @@
 import { locales, defaultLocale } from '@/i18n/config';
 import type { Locale } from '@/i18n/config';
 
+// noinspection D
 /**
  * Parse Accept-Language header and extract language preferences with weights
  * Example: "es-ES,es;q=0.9,en;q=0.8" -> { es: 0.9, en: 0.8 }
@@ -10,6 +11,7 @@ export function parseAcceptLanguage(header: string): Record<string, number> {
   const preferences: Record<string, number> = {};
   const isExplicit: Record<string, boolean> = {};
 
+  // noinspection D
   header.split(',').forEach((lang) => {
     const trimmed = lang.trim();
     if (!trimmed) return;
