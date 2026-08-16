@@ -1,3 +1,5 @@
+'use client';
+
 import {Reveal} from "../Reveal";
 import {footerSocialNetworks} from "./Footer.data";
 import Link from "next/link";
