@@ -23,7 +23,7 @@ export function About() {
     return (
             <div className="relative p-4 md:py-40" id={t("About").toLowerCase()}>
                 <BackgroundRadialRight/>
-                <div className="grid max-w-5xl mx-auto md:grid-cols-2 gap-8 md:items-center">
+                <div className="grid max-w-5xl mx-auto md:grid-cols-2 gap-8">
                     <div>
                         <Reveal>
                             <h1 className="text-5xl font-semibold">
@@ -47,12 +47,11 @@ export function About() {
                             </button>
                         </div>
                     </Reveal>
-                    </div>
-                    <MotionTransition className="flex items-center justify-center">
-                        <Image src="/assets/Handshake.svg" alt="Card" width={300} height={300}
-                               className="h-auto w-64 md:w-80" />
-                    </MotionTransition>
                 </div>
+                <MotionTransition className="flex items-center justify-center mt-8">
+                    <Image src="/assets/Handshake.svg" alt="Card" width={300} height={300}
+                           className="h-auto w-64 md:w-80" />
+                </MotionTransition>
             </div>
         )
     }
