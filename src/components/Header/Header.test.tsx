@@ -30,7 +30,6 @@ jest.mock('react-icons/ri', () => ({
 jest.mock('next/image', () => ({
   __esModule: true,
   default: (props: any) => {
-    // eslint-disable-next-line @next/next/no-img-element
     const { src, alt, fetchPriority, ...rest } = props
     return <img src={src} alt={alt} {...rest} />
   },
