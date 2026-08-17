@@ -317,7 +317,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## 👤 Author
 
 **José Antonio Puértolas Montañés**
-- Email: jose@mnopi.com
 - GitHub: [@j5pu](https://github.com/j5pu)
 
 ## 🙏 Acknowledgments
