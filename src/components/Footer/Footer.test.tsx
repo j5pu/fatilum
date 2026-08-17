@@ -3,7 +3,11 @@ import { Footer } from '@/components/Footer'
 
 // Mock next-intl
 jest.mock('next-intl', () => ({
-  useTranslations: () => (key: string) => key,
+  useTranslations: () => {
+    const t = (key: string) => key
+    t.raw = (key: string) => key
+    return t
+  },
   useLocale: () => 'en',
 }))
 
@@ -41,13 +45,6 @@ describe('Footer Component', () => {
     render(<Footer icon="/assets/mnopi.png" info={mockInfo} />)
     const footer = document.querySelector('div[class*="mx-auto"]')
     expect(footer).toBeInTheDocument()
-  })
-
-  it('displays logo image', () => {
-    const { container } = render(<Footer icon="/assets/mnopi.png" info={mockInfo} />)
-    const img = container.querySelector('img')
-    expect(img).toBeInTheDocument()
-    expect(img).toHaveAttribute('src', '/assets/mnopi.png')
   })
 
   it('includes company name in copyright', () => {

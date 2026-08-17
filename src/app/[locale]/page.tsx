@@ -17,6 +17,7 @@ export default async function Home({ params }: HomeProps ) {
   return (
     <>
       <Header icon={icon} info={info} />
+      <div className="pt-32 md:pt-40"></div>
       <About />
       <Companies />
       <Counter />

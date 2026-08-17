@@ -17,11 +17,14 @@ export function About() {
     const restWords = splitTitle.slice(2).join(' ')
 
     const onClick = () => {
-        window.location.href = "#" + Companies.toLowerCase();
+        const element = document.getElementById('companies');
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
     };
 
     return (
-            <div className="relative p-4 md:py-40" id="about">
+            <div className="relative p-4 md:pb-24" id="about">
                 <BackgroundRadialRight/>
                 <div className="grid max-w-5xl mx-auto md:grid-cols-2">
                     <div>

@@ -1,5 +1,5 @@
 {
-    "title": "M&A advice for companies",
+    "title": "M&A advice for technology companies",
     "description": "Transparency and innovation in M&A, to help the growth of SMEs, giving greater clarity about the potential and future of the operation. Access to buying technology companies and Private Equity.",
     "Home": {
         "Header": {
@@ -10,7 +10,7 @@
             }
         },
         "About": {
-            "Title": "M&A advice for companies",
+            "Title": "M&A advice for technology companies",
             "Description": "Transparency and innovation in M&A, to help the growth of SMEs, giving greater clarity about the potential and future of the operation. Access to buying technology companies and Private Equity."
         },
         "Companies": {
@@ -44,6 +44,10 @@
             "sending": "Sending...",
             "cancel": "Cancel",
             "success": "Message sent successfully!"
+        },
+        "Footer": {
+            "PrivacyPolicy": "Privacy Policy",
+            "LegalNotice": "Legal Notice"
         }
     },
     "Privacy": {

@@ -1,0 +1,127 @@
+{
+    "title": "M&A-Beratung für Technologieunternehmen",
+    "description": "Transparenz und Innovation in M&A, um das Wachstum von KMU zu unterstützen, indem bessere Klarheit über das Potenzial und die Zukunft der Transaktion gegeben wird. Zugang zum Kauf von Technologieunternehmen und Private-Equity-Beteiligungen.",
+    "Home": {
+        "Header": {
+            "CallToAction": {
+                "About": "Über uns",
+                "Companies": "Unternehmen",
+                "Contact": "Kontakt"
+            }
+        },
+        "About": {
+            "Title": "M&A-Beratung für Technologieunternehmen",
+            "Description": "Transparenz und Innovation in M&A, um das Wachstum von KMU zu unterstützen, indem bessere Klarheit über das Potenzial und die Zukunft der Transaktion gegeben wird. Zugang zum Kauf von Technologieunternehmen und Private-Equity-Beteiligungen."
+        },
+        "Companies": {
+            "Title": "Begleiten von Unternehmen:",
+            "Data": {
+                "rewards": {
+                    "Title": "B2B",
+                    "Description": "B2B-Vertikale auf spezialisierten Märkten, mit einem engagierten Team mit Branchenkenntnissen."
+                },
+                "safe": {
+                    "Title": "Wiederkehrend",
+                    "Description": "Potenzial für ein wiederkehrendes, skalierbares und weltweit erreichbares Geschäftsmodell."
+                },
+                "send": {
+                    "Title": "Generatoren",
+                    "Description": "Auswirkungen, Cashflow-Generatoren und Markteintrittsbarrieren."
+                }
+            }
+        },
+        "Counter": {
+            "1": "Länder",
+            "2": "Unternehmen",
+            "3": "Million €"
+        },
+        "ContactForm": {
+            "title": "Kontaktieren Sie uns",
+            "name": "Name",
+            "email": "E-Mail",
+            "message": "Nachricht",
+            "send": "Senden",
+            "sending": "Wird gesendet...",
+            "cancel": "Abbrechen",
+            "success": "Nachricht erfolgreich gesendet!"
+        },
+        "Footer": {
+            "PrivacyPolicy": "Datenschutzrichtlinie",
+            "LegalNotice": "Rechtliche Hinweise"
+        }
+    },
+    "Privacy": {
+        "title": "Datenschutzrichtlinie",
+        "description": "Datenschutzrichtlinie für fatilum OÜ",
+        "sections": {
+            "introduction": {
+                "title": "Einführung",
+                "content": "Bei fatilum OÜ setzen wir uns dafür ein, Ihre Privatsphäre zu schützen und Ihnen eine positive Erfahrung auf unserer Website zu bieten. Diese Datenschutzrichtlinie erklärt, wie wir Ihre Informationen erfassen, nutzen, offenlegen und schützen."
+            },
+            "dataCollection": {
+                "title": "Datenerfassung",
+                "content": "Wir erfassen Informationen, die Sie uns direkt bereitstellen, beispielsweise wenn Sie uns kontaktieren oder unsere Dienstleistungen anfordern.",
+                "items": [
+                    "Kontaktinformationen (Name, E-Mail, Telefonnummer)",
+                    "Unternehmensinformationen (Unternehmensname, Branche, Größe)",
+                    "Kommunikationseinstellungen"
+                ]
+            },
+            "cookies": {
+                "title": "Cookies",
+                "content": "Wir verwenden keine Cookies oder Tracking-Technologien auf unserer Website. Ihre Browser-Aktivität wird nicht verfolgt."
+            },
+            "userRights": {
+                "title": "Ihre Rechte",
+                "content": "Gemäß DSGVO und anderen Datenschutzbestimmungen haben Sie folgende Rechte:",
+                "items": [
+                    "Recht auf Zugang zu Ihren persönlichen Daten",
+                    "Recht auf Berichtigung ungenauer Daten",
+                    "Recht auf Löschung Ihrer Daten",
+                    "Recht auf Widerspruch gegen die Verarbeitung"
+                ]
+            },
+            "contact": {
+                "title": "Kontaktinformationen",
+                "registry": "Registrierungscode",
+                "vat": "Umsatzsteuer-ID",
+                "address": "Adresse",
+                "email": "E-Mail"
+            }
+        },
+        "lastUpdated": "Zuletzt aktualisiert: August 2026"
+    },
+    "Legal": {
+        "title": "Rechtliche Hinweise",
+        "description": "Rechtliche Hinweise für fatilum OÜ",
+        "sections": {
+            "company": {
+                "title": "Unternehmensangaben",
+                "registry": "Registrierungscode",
+                "vat": "Umsatzsteuer-ID",
+                "address": "Adresse"
+            },
+            "dataProtection": {
+                "title": "Datenschutz",
+                "content": "Wir halten uns an die DSGVO und estländische Datenschutzbestimmungen ein. Personenbezogene Daten werden gemäß geltender Gesetze verarbeitet und sind durch angemessene Sicherheitsmaßnahmen geschützt."
+            },
+            "intellectualProperty": {
+                "title": "Geistiges Eigentum",
+                "content": "Alle Inhalte auf dieser Website, einschließlich Text, Grafiken, Logos und Bilder, sind Eigentum von fatilum OÜ oder seinen Inhaltsanbietern und sind durch internationale Urhebergesetze geschützt."
+            },
+            "liability": {
+                "title": "Haftungsbeschränkung",
+                "content": "Die auf dieser Website bereitgestellten Informationen dienen nur zu Informationszwecken und stellen keine Rechts- oder Finanzberatung dar. fatilum OÜ haftet nicht für Schäden, die sich aus der Nutzung oder der Unmöglichkeit der Nutzung dieser Website ergeben."
+            },
+            "governing": {
+                "title": "Anwendbares Recht",
+                "content": "Diese Nutzungsbedingungen unterliegen den Gesetzen Estlands."
+            },
+            "contact": {
+                "title": "Kontaktieren Sie uns",
+                "text": "Bei Fragen zur Rechtmäßigkeit kontaktieren Sie uns unter:"
+            }
+        },
+        "lastUpdated": "Zuletzt aktualisiert: August 2026"
+    }
+}

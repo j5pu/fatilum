@@ -13,7 +13,12 @@ export function LanguageSelector() {
     const languages = [
         { code: 'en', label: 'EN - English' },
         { code: 'es', label: 'ES - Español' },
-    ]
+        { code: 'ee', label: 'EE - Eesti' },
+        { code: 'pt', label: 'PT - Português' },
+        { code: 'it', label: 'IT - Italiano' },
+        { code: 'fr', label: 'FR - Français' },
+        { code: 'de', label: 'DE - Deutsch' },
+    ].sort((a, b) => a.label.localeCompare(b.label))
 
     const linkClassName = (code: string) =>
         `block px-4 py-2 text-sm hover:bg-secondary hover:bg-opacity-10 transition-colors ${

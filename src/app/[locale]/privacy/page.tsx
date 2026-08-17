@@ -1,28 +1,6 @@
+'use client';
+
 import { useTranslations } from 'next-intl';
-import { Metadata } from 'next';
-
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}): Promise<Metadata> {
-  const { locale } = await params;
-
-  const titles = {
-    en: 'Privacy Policy',
-    es: 'Política de Privacidad'
-  } as const;
-
-  const descriptions = {
-    en: 'Privacy Policy for fatilum OÜ',
-    es: 'Política de Privacidad para fatilum OÜ'
-  } as const;
-
-  return {
-    title: titles[locale as keyof typeof titles] || 'Privacy Policy',
-    description: descriptions[locale as keyof typeof descriptions] || 'Privacy Policy for fatilum OÜ',
-  };
-}
 
 export default function PrivacyPolicy() {
   const t = useTranslations('Privacy');

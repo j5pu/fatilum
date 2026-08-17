@@ -1,5 +1,5 @@
 {
-    "title": "Asesoramiento M&A para empresas IT",
+    "title": "Asesoramiento M&A para empresas de tecnología",
     "description": "Transparencia e innovación en fusiones y adquisiciones, para ayudar al crecimiento de PYMEs, dando mayor claridad sobre el potencial y futuro de la operación. Acceso a empresas tecnológicas compradoras e inversores privados.",
     "Home": {
         "Header": {
@@ -10,7 +10,7 @@
             }
         },
         "About": {
-            "Title": "Asesoramiento M&A para empresas IT",
+            "Title": "Asesoramiento M&A para empresas de tecnología",
             "Description": "Transparencia e innovación en fusiones y adquisiciones, para ayudar al crecimiento de PYMEs, dando mayor claridad sobre el potencial y futuro de la operación. Acceso a empresas tecnológicas compradoras e inversores privados."
         },
         "Companies": {
@@ -44,6 +44,10 @@
             "sending": "Enviando...",
             "cancel": "Cancelar",
             "success": "¡Mensaje enviado con éxito!"
+        },
+        "Footer": {
+            "PrivacyPolicy": "Política de Privacidad",
+            "LegalNotice": "Aviso Legal"
         }
     },
     "Privacy": {
