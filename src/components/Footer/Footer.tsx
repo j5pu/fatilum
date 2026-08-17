@@ -20,7 +20,7 @@ export function Footer({ icon, info }: { icon: string, info: HostProps }) {
     return (
         <>
             <div className="max-w-5xl p-6 mx-auto mt-16 md:mt-20">
-                <div className="border-[#3F3E45] border-[1px] my-8"/>
+                <div className="border-[#3F3E45] border my-8"/>
 
                 <div className="flex flex-col md:flex-row items-center justify-center gap-8">
                     <div className="my-3 flex-1">

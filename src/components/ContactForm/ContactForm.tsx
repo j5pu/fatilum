@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 
 const INPUT_CLASS =
   'w-full px-4 py-2 bg-transparent text-primary rounded-lg border border-[#3F3E45] ' +
-  'focus:border-secondary focus:outline-none';
+  'focus:border-secondary focus:outline-hidden';
 const BUTTON_SUBMIT_CLASS =
   'flex-1 bg-blueRadial hover:opacity-90 text-primary font-semibold py-2 rounded-lg ' +
   'disabled:opacity-50';
