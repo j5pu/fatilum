@@ -8,12 +8,11 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-6.0.3-blue?logo=typescript)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.3.3-38B2AC?logo=tailwind-css)](https://tailwindcss.com/)
 [![GitHub Actions](https://img.shields.io/github/actions/workflow/status/j5pu/fatilum/tests.yml?branch=main&logo=github&label=Tests)](https://github.com/j5pu/fatilum/actions/workflows/tests.yml)
-[![Cloudflare Pages](https://img.shields.io/badge/Deployed-Cloudflare%20Pages-FF6D00?logo=cloudflare)](https://fatilum.pages.dev/)
 [![License](https://img.shields.io/badge/License-MIT-green)]()
 
 ## 🚀 Features
 
-- **Multi-language Support** - English (en) and Spanish (es) with next-intl
+- **Multi-language Support** - 7 languages (English, Spanish, Estonian, Portuguese, Italian, French, German) with next-intl
 - **Responsive Design** - Mobile-first with Tailwind CSS
 - **Animation Framework** - Smooth transitions with Framer Motion
 - **Type-Safe** - Full TypeScript support with strict type checking
@@ -42,8 +41,6 @@
 
 ### Deployment
 - **Vercel** - Production deployment
-- **Cloudflare Pages** - Global CDN with Workers
-- **GitHub Pages** - Alternative hosting
 
 ## 🏗️ Project Structure
 
@@ -51,28 +48,47 @@
 fatilum/
 ├── src/
 │   ├── app/                    # Next.js App Router
-│   │   └── [locale]/          # i18n dynamic routes
-│   │       ├── layout.tsx      # Root layout with client provider
-│   │       └── page.tsx        # Home page
+│   │   ├── [locale]/           # i18n dynamic routes
+│   │   │   ├── layout.tsx      # Root layout
+│   │   │   ├── layout-client.tsx
+│   │   │   ├── layout-metadata.ts
+│   │   │   ├── page.tsx        # Home page
+│   │   │   ├── legal/
+│   │   │   └── privacy/
+│   │   ├── api/contact/        # Contact form API route
+│   │   ├── robots.ts
+│   │   └── sitemap.ts
 │   ├── components/             # React components
 │   │   ├── Header/
 │   │   ├── Footer/
 │   │   ├── About/
 │   │   ├── Companies/
 │   │   ├── Counter/
+│   │   ├── ContactForm/
+│   │   ├── LanguageSelector/
+│   │   ├── Analytics/
+│   │   ├── BackgroundRadialLeft/
+│   │   ├── BackgroundRadialRight/
 │   │   ├── MotionTransition/
 │   │   └── Reveal/
-│   ├── lib/                    # Utilities
-│   │   ├── intl.ts            # i18n setup
-│   │   └── host.ts            # Host/URL utilities
-│   └── styles/                 # Global styles
+│   ├── i18n/                    # i18n config & request handling
+│   │   ├── config.ts            # Supported locales
+│   │   └── request.ts
+│   ├── lib/                     # Utilities
+│   │   ├── intl.ts              # i18n setup
+│   │   ├── host.ts              # Host/URL utilities
+│   │   └── language-detector.ts # Browser locale detection
+│   ├── messages/                 # Translation JSON files (7 locales)
+│   ├── metadata/                 # Shared metadata helpers
+│   ├── providers/                # React context providers
+│   ├── utils/                    # Shared utilities
+│   └── fonts/                    # Local font assets
 ├── public/                      # Static assets
 ├── e2e/                         # Playwright E2E tests
-├── functions/                   # Cloudflare Pages middleware
 ├── .github/workflows/           # GitHub Actions CI/CD
-├── wrangler.toml               # Cloudflare Pages config
 ├── jest.config.js              # Jest configuration
 ├── eslint.config.mjs           # ESLint 9 flat config
+├── playwright.config.ts        # Playwright configuration
 └── next.config.mjs             # Next.js configuration
 ```
 
@@ -156,38 +172,6 @@ npm run lint            # Run ESLint & TypeScript checks
 - Environment: Node.js 24
 - URL: https://fatilum.vercel.app
 
-### Cloudflare Pages (v3 Build Image)
-
-**Architecture**
-- Cloudflare Pages v3 Build Image (supports Node.js 24)
-- No manual dashboard configuration needed
-- Files: `wrangler.toml` + `.node-version` + `functions/_middleware.ts`
-
-**How It Works**
-1. Cloudflare v3 build image detects Node.js 24 from `.node-version`
-2. Cloudflare Functions middleware intercepts requests via `functions/_middleware.ts`
-3. Next.js app processes requests through `.next` build output
-4. Responses returned to client
-
-**Deployment**
-Just push to GitHub — Cloudflare Pages v3 auto-deploys:
-- ✅ Uses Node.js 24 (detected from `.node-version` file)
-- ✅ Loads middleware from `functions/` directory
-- ✅ Builds Next.js with `npm run build`
-- ✅ Serves from `.next` output directory
-
-**Configuration Files**
-- `wrangler.toml` - Pages build configuration
-- `.node-version` - Specifies Node.js version (24)
-- `functions/_middleware.ts` - Request middleware
-- `package.json` - Engine requirement (>=24.0.0)
-
-**Troubleshooting**
-- Build still uses Node 18: Clear Cloudflare cache (Dashboard → Caching → Purge Cache)
-- Middleware not loading: Verify `functions/_middleware.ts` exists and `wrangler.toml` has `[functions]` section
-- Wrong Node.js version: Check `.node-version` file contains only version number
-- Check deployment logs: https://dash.cloudflare.com/ → Pages → fatilum → Deployments
-
 ### GitHub Actions CI/CD
 
 **Workflows**
@@ -219,7 +203,7 @@ Build Check ✅
          ↓
 E2E Tests ✅
          ↓
-All passing → Auto-deploy to Vercel & Cloudflare
+All passing → Auto-deploy to Vercel
          ↓
 ✅ Production live
 ```
@@ -253,11 +237,16 @@ All passing → Auto-deploy to Vercel & Cloudflare
 ### Supported Languages
 - **English** (en) - Default
 - **Spanish** (es)
+- **Estonian** (ee)
+- **Portuguese** (pt)
+- **Italian** (it)
+- **French** (fr)
+- **German** (de)
 
 ### Add New Language
-1. Add locale to `navigation.ts`
-2. Create translation files in `messages/`
-3. Add to `i18n.ts` validation
+1. Add locale to `src/i18n/config.ts`
+2. Create translation file in `src/messages/`
+3. Add label/entry to `src/components/LanguageSelector/LanguageSelector.tsx`
 
 ## 🔐 Security & Best Practices
 
@@ -273,7 +262,7 @@ All passing → Auto-deploy to Vercel & Cloudflare
 - **Lighthouse Scores:** 90+ (Performance, Accessibility, Best Practices, SEO)
 - **Core Web Vitals:** Optimized
 - **Client JS:** ~820KB uncompressed across chunks (largest single chunk ~224KB)
-- **CDN:** Global distribution via Vercel/Cloudflare
+- **CDN:** Global distribution via Vercel
 
 ## 🐛 Troubleshooting
 
@@ -325,7 +314,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Framer Motion](https://www.framer.com/motion/)
 - [next-intl](https://next-intl-docs.vercel.app/)
-- [Cloudflare Pages](https://pages.cloudflare.com/)
 
 ---
 
