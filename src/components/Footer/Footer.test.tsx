@@ -3,7 +3,11 @@ import { Footer } from '@/components/Footer'
 
 // Mock next-intl
 jest.mock('next-intl', () => ({
-  useTranslations: () => (key: string) => key,
+  useTranslations: () => {
+    const t = (key: string) => key
+    t.raw = (key: string) => key
+    return t
+  },
   useLocale: () => 'en',
 }))
 
