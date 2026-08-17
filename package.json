@@ -17,7 +17,7 @@
     "e2e:debug": "playwright test --debug"
   },
   "dependencies": {
-    "@formatjs/intl": "^2.10.1",
+    "@formatjs/intl": "^4.1.18",
     "@vercel/analytics": "^2.0.1",
     "framer-motion": "^13.1.0",
     "next": "^16.3.1",
@@ -27,7 +27,7 @@
     "react": "^19.2.8",
     "react-countup": "^6.5.3",
     "react-dom": "^19.2.8",
-    "react-icons": "^4.12.0"
+    "react-icons": "^5.7.0"
   },
   "devDependencies": {
     "@playwright/test": "^1.62.1",
@@ -36,7 +36,7 @@
     "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^14.6.4",
     "@types/jest": "^30.0.0",
-    "@types/node": "^20.19.43",
+    "@types/node": "^24.13.3",
     "@types/nodemailer": "^8.0.1",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.4",
